@@ -19,6 +19,9 @@ type
     DataSemester1: TMenuItem;
     DataHubungan1: TMenuItem;
     ZConnection1: TZConnection;
+    DataPoint1: TMenuItem;
+    DataUser1: TMenuItem;
+    procedure DataKelas1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,6 +33,13 @@ var
 
 implementation
 
+uses Unit2;
+
 {$R *.dfm}
+
+procedure TMenuAwal.DataKelas1Click(Sender: TObject);
+begin
+ kelas.show;
+end;
 
 end.

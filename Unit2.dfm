@@ -11,6 +11,7 @@ object Kelas: TKelas
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
@@ -27,11 +28,11 @@ object Kelas: TKelas
     ParentFont = False
   end
   object lbl2: TLabel
-    Left = 48
+    Left = 56
     Top = 64
-    Width = 58
+    Width = 47
     Height = 14
-    Caption = ' ID SISWA'
+    Caption = ' ID Kelas'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -40,7 +41,7 @@ object Kelas: TKelas
     ParentFont = False
   end
   object lbl3: TLabel
-    Left = 48
+    Left = 56
     Top = 96
     Width = 61
     Height = 14
@@ -53,7 +54,7 @@ object Kelas: TKelas
     ParentFont = False
   end
   object lbl4: TLabel
-    Left = 48
+    Left = 56
     Top = 128
     Width = 41
     Height = 14
@@ -65,21 +66,21 @@ object Kelas: TKelas
     Font.Style = []
     ParentFont = False
   end
-  object edtidKelas: TEdit
+  object edt1: TEdit
     Left = 152
     Top = 64
     Width = 393
     Height = 21
     TabOrder = 0
   end
-  object edtnmKelas: TEdit
+  object edt2: TEdit
     Left = 152
     Top = 96
     Width = 393
     Height = 21
     TabOrder = 1
   end
-  object edtJurusan: TEdit
+  object edt3: TEdit
     Left = 152
     Top = 128
     Width = 393
@@ -91,59 +92,71 @@ object Kelas: TKelas
     Top = 176
     Width = 75
     Height = 25
-    Caption = 'btn1'
+    Caption = 'Baru'
     TabOrder = 3
-  end
-  object btn2: TButton
-    Left = 168
-    Top = 176
-    Width = 75
-    Height = 25
-    Caption = 'btn2'
-    TabOrder = 4
+    OnClick = btn1Click
   end
   object btn3: TButton
     Left = 272
     Top = 176
     Width = 75
     Height = 25
-    Caption = 'btn3'
-    TabOrder = 5
+    Caption = 'Edit'
+    TabOrder = 4
+    OnClick = btn3Click
   end
   object btn4: TButton
     Left = 376
     Top = 176
     Width = 75
     Height = 25
-    Caption = 'btn4'
-    TabOrder = 6
+    Caption = 'Hapus'
+    TabOrder = 5
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 480
     Top = 176
     Width = 75
     Height = 25
-    Caption = 'btn5'
-    TabOrder = 7
+    Caption = 'Batal'
+    TabOrder = 6
+    OnClick = btn5Click
   end
   object dbgrdkelas: TDBGrid
     Left = 48
     Top = 216
     Width = 521
     Height = 185
-    TabOrder = 8
+    DataSource = dsKelas
+    TabOrder = 7
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrdkelasCellClick
+  end
+  object btn2: TButton
+    Left = 160
+    Top = 176
+    Width = 75
+    Height = 25
+    Caption = 'Simpan'
+    TabOrder = 8
+    OnClick = btn2Click
   end
   object ZQuery1: TZQuery
+    Connection = MenuAwal.ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from kelas')
     Params = <>
     Left = 576
     Top = 32
   end
   object dsKelas: TDataSource
+    DataSet = ZQuery1
     Left = 576
     Top = 88
   end

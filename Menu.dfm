@@ -53,6 +53,7 @@ object MenuAwal: TMenuAwal
       end
       object DataKelas1: TMenuItem
         Caption = 'Data Kelas'
+        OnClick = DataKelas1Click
       end
       object DataWaliKelas1: TMenuItem
         Caption = 'Data Wali Kelas'
@@ -62,6 +63,12 @@ object MenuAwal: TMenuAwal
       end
       object DataHubungan1: TMenuItem
         Caption = 'Data Hubungan'
+      end
+      object DataPoint1: TMenuItem
+        Caption = 'Data Point'
+      end
+      object DataUser1: TMenuItem
+        Caption = 'Data User'
       end
     end
   end
