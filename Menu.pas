@@ -4,15 +4,21 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus, StdCtrls;
+  Dialogs, Menus, StdCtrls, ZAbstractConnection, ZConnection;
 
 type
-  TForm1 = class(TForm)
+  TMenuAwal = class(TForm)
     lbl1: TLabel;
     lbl2: TLabel;
-    btnSiswa: TButton;
-    btnWalikelas: TButton;
-    btnOrtu: TButton;
+    menu: TMainMenu;
+    menu1: TMenuItem;
+    DataSiswa1: TMenuItem;
+    DataOrtu1: TMenuItem;
+    DataKelas1: TMenuItem;
+    DataWaliKelas1: TMenuItem;
+    DataSemester1: TMenuItem;
+    DataHubungan1: TMenuItem;
+    ZConnection1: TZConnection;
   private
     { Private declarations }
   public
@@ -20,7 +26,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  MenuAwal: TMenuAwal;
 
 implementation
 

@@ -1,21 +1,22 @@
-object Form1: TForm1
-  Left = 245
-  Top = 175
+object MenuAwal: TMenuAwal
+  Left = 284
+  Top = 183
   Width = 928
   Height = 480
-  Caption = 'Form1'
+  Caption = 'Menu'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = menu
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
-    Left = 288
-    Top = 24
+    Left = 296
+    Top = 160
     Width = 297
     Height = 36
     Caption = 'SISTEM INFROMASI'
@@ -27,11 +28,11 @@ object Form1: TForm1
     ParentFont = False
   end
   object lbl2: TLabel
-    Left = 232
-    Top = 64
-    Width = 438
+    Left = 272
+    Top = 200
+    Width = 339
     Height = 36
-    Caption = ' SDN KEBANGGAAN BANGSA'
+    Caption = ' SMP PELITA HARAPAN'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -32
@@ -39,28 +40,45 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
   end
-  object btnSiswa: TButton
-    Left = 216
-    Top = 144
-    Width = 105
-    Height = 49
-    Caption = 'Data Siswa'
-    TabOrder = 0
+  object menu: TMainMenu
+    Left = 48
+    Top = 24
+    object menu1: TMenuItem
+      Caption = 'Menu'
+      object DataSiswa1: TMenuItem
+        Caption = 'Data Siswa'
+      end
+      object DataOrtu1: TMenuItem
+        Caption = 'Data Ortu'
+      end
+      object DataKelas1: TMenuItem
+        Caption = 'Data Kelas'
+      end
+      object DataWaliKelas1: TMenuItem
+        Caption = 'Data Wali Kelas'
+      end
+      object DataSemester1: TMenuItem
+        Caption = 'Data Semester'
+      end
+      object DataHubungan1: TMenuItem
+        Caption = 'Data Hubungan'
+      end
+    end
   end
-  object btnWalikelas: TButton
-    Left = 568
-    Top = 144
-    Width = 129
-    Height = 49
-    Caption = 'Data Wali Kelas'
-    TabOrder = 1
-  end
-  object btnOrtu: TButton
-    Left = 392
-    Top = 144
-    Width = 113
-    Height = 49
-    Caption = 'Data Orang Tua'
-    TabOrder = 2
+  object ZConnection1: TZConnection
+    ControlsCodePage = cGET_ACP
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'smppelitaharapan'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 
+      'D:\FOLDER KULIAH\KULIAH SEMESTER 4\pemrograman visual 2\ProjectA' +
+      'khir\libmysql.dll'
+    Left = 48
+    Top = 96
   end
 end
