@@ -64,14 +64,14 @@ begin
  btn1.Enabled:= False;
  btn2.Enabled:= True;
  btn3.Enabled:=True;
+ btn5.Enabled:=True;
 
 end;
 
 procedure TKelas.btn2Click(Sender: TObject);
 begin
- ShowMessage('DATA BERHASIL DIUPDATE!') ;
  ZQuery1.SQL.Clear;
- ZQuery1.SQL.Add('insert into kelas values("'+edt2.Text+'","'+edt3.Text+'")where id=1');
+ ZQuery1.SQL.Add('insert into kelas values("'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'")');
  ZQuery1.ExecSQL;
 
  ZQuery1.SQL.Clear;
@@ -87,23 +87,36 @@ begin
   edt1.Text:=ZQuery1.FieldList[0].AsString;
   edt2.Text:=ZQuery1.FieldList[1].AsString;
   edt3.Text:=ZQuery1.FieldList[2].AsString;
+
+  edt1.Enabled:= True;
+  edt2.Enabled:= True;
+  edt3.Enabled:= True;
+
+  btn1.Enabled:= false;
+  btn2.Enabled:= False;
+  btn3.Enabled:= True;
+  btn4.Enabled:= True;
+  btn5.Enabled:= True;
+
 end;
 
 procedure TKelas.btn3Click(Sender: TObject);
 begin
+  ShowMessage('DATA BERHASIL DIUPDATE!') ;
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('Update kelas set id="'+edt1.Text+'", nama="'+edt2.Text+'", jurusan"'+edt3.Text+'" where id=1');
+  ZQuery1.SQL.Add('Update kelas set nama="'+edt2.Text+'", jurusan"'+edt3.Text+'" where id="'+edt1.Text+'"');
   ZQuery1.ExecSQL;
 
   ZQuery1.SQL.Clear;
   ZQuery1.SQL.Add('select * from kelas');
   ZQuery1.Open;
+  posisiawal;
 end;
 
 procedure TKelas.btn4Click(Sender: TObject);
 begin
    ZQuery1.SQL.Clear;
-   ZQuery1.SQL.Add('delete from kelas where id=1');
+   ZQuery1.SQL.Add('delete from kelas where id="'+edt1.Text+'"');
    ZQuery1.ExecSQL;
 
    ZQuery1.SQL.Clear;
@@ -113,9 +126,7 @@ end;
 
 procedure TKelas.btn5Click(Sender: TObject);
 begin
-  edt1.Clear;
-  edt2.Clear;
-  edt3.Clear;
+  posisiawal;
 end;
 
 
@@ -149,7 +160,6 @@ begin
  edt1.Enabled:= False;
  edt2.Enabled:= False;
  edt3.Enabled:= False;
-
 
  btn1.Enabled:= True;
  btn2.Enabled:= False;
