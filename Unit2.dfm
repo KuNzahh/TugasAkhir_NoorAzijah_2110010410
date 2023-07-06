@@ -1,6 +1,6 @@
 object Kelas: TKelas
-  Left = 409
-  Top = 164
+  Left = 259
+  Top = 147
   Width = 656
   Height = 480
   Caption = 'Data Kelas'
@@ -124,8 +124,8 @@ object Kelas: TKelas
     OnClick = btn5Click
   end
   object dbgrdkelas: TDBGrid
-    Left = 48
-    Top = 216
+    Left = 64
+    Top = 224
     Width = 521
     Height = 185
     DataSource = dsKelas

@@ -104,7 +104,7 @@ procedure TKelas.btn3Click(Sender: TObject);
 begin
   ShowMessage('DATA BERHASIL DIUPDATE!') ;
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('Update kelas set nama="'+edt2.Text+'", jurusan"'+edt3.Text+'" where id="'+edt1.Text+'"');
+  ZQuery1.SQL.Add('Update kelas set nama= "'+edt2.Text+'", jurusan="'+edt3.Text+'" where kelas.id="'+edt1.Text+'"');
   ZQuery1.ExecSQL;
 
   ZQuery1.SQL.Clear;
