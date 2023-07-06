@@ -1,6 +1,6 @@
 object Siswa: TSiswa
-  Left = 311
-  Top = 101
+  Left = 521
+  Top = 128
   Width = 675
   Height = 607
   Caption = 'Data Siswa'
