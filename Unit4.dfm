@@ -1,6 +1,6 @@
 object Siswa: TSiswa
-  Left = 521
-  Top = 128
+  Left = 552
+  Top = 66
   Width = 675
   Height = 607
   Caption = 'Data Siswa'
@@ -11,6 +11,7 @@ object Siswa: TSiswa
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
@@ -210,6 +211,7 @@ object Siswa: TSiswa
     Height = 25
     Caption = 'Baru'
     TabOrder = 3
+    OnClick = btn1Click
   end
   object btn3: TButton
     Left = 272
@@ -218,6 +220,7 @@ object Siswa: TSiswa
     Height = 25
     Caption = 'Edit'
     TabOrder = 4
+    OnClick = btn3Click
   end
   object btn4: TButton
     Left = 376
@@ -226,6 +229,7 @@ object Siswa: TSiswa
     Height = 25
     Caption = 'Hapus'
     TabOrder = 5
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 480
@@ -234,6 +238,7 @@ object Siswa: TSiswa
     Height = 25
     Caption = 'Batal'
     TabOrder = 6
+    OnClick = btn5Click
   end
   object btn2: TButton
     Left = 160
@@ -242,6 +247,7 @@ object Siswa: TSiswa
     Height = 25
     Caption = 'Simpan'
     TabOrder = 7
+    OnClick = btn2Click
   end
   object edt4: TEdit
     Left = 152
@@ -271,40 +277,33 @@ object Siswa: TSiswa
     Height = 21
     TabOrder = 11
   end
-  object edt8: TEdit
-    Left = 152
-    Top = 184
-    Width = 393
-    Height = 21
-    TabOrder = 12
-  end
   object edt9: TEdit
     Left = 152
     Top = 208
     Width = 393
     Height = 21
-    TabOrder = 13
+    TabOrder = 12
   end
   object edt10: TEdit
     Left = 152
     Top = 232
     Width = 169
     Height = 21
-    TabOrder = 14
+    TabOrder = 13
   end
   object edt11: TEdit
     Left = 384
     Top = 232
     Width = 161
     Height = 21
-    TabOrder = 15
+    TabOrder = 14
   end
   object edt12: TEdit
     Left = 152
     Top = 256
     Width = 393
     Height = 21
-    TabOrder = 16
+    TabOrder = 15
   end
   object dbgrdsiswa: TDBGrid
     Left = 56
@@ -312,12 +311,20 @@ object Siswa: TSiswa
     Width = 545
     Height = 217
     DataSource = dsSiswa
-    TabOrder = 17
+    TabOrder = 16
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrdsiswaCellClick
+  end
+  object edt8: TEdit
+    Left = 152
+    Top = 184
+    Width = 393
+    Height = 21
+    TabOrder = 17
   end
   object ZQuery1: TZQuery
     Connection = MenuAwal.ZConnection1

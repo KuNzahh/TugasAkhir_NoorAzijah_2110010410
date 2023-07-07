@@ -22,6 +22,7 @@ type
     DataPoint1: TMenuItem;
     DataUser1: TMenuItem;
     procedure DataKelas1Click(Sender: TObject);
+    procedure DataSiswa1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,13 +34,18 @@ var
 
 implementation
 
-uses Unit2;
+uses Unit2, Unit4;
 
 {$R *.dfm}
 
 procedure TMenuAwal.DataKelas1Click(Sender: TObject);
 begin
  kelas.show;
+end;
+
+procedure TMenuAwal.DataSiswa1Click(Sender: TObject);
+begin
+  siswa.show
 end;
 
 end.
