@@ -23,6 +23,9 @@ type
     DataUser1: TMenuItem;
     procedure DataKelas1Click(Sender: TObject);
     procedure DataSiswa1Click(Sender: TObject);
+    procedure DataWaliKelas1Click(Sender: TObject);
+    procedure DataOrtu1Click(Sender: TObject);
+    procedure DataUser1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,7 +37,7 @@ var
 
 implementation
 
-uses Unit2, Unit4;
+uses Unit2, Unit4, Unit1, Unit3, Unit8;
 
 {$R *.dfm}
 
@@ -46,6 +49,21 @@ end;
 procedure TMenuAwal.DataSiswa1Click(Sender: TObject);
 begin
   siswa.show
+end;
+
+procedure TMenuAwal.DataWaliKelas1Click(Sender: TObject);
+begin
+ walikelas.show
+end;
+
+procedure TMenuAwal.DataOrtu1Click(Sender: TObject);
+begin
+ ortu.show
+end;
+
+procedure TMenuAwal.DataUser1Click(Sender: TObject);
+begin
+ user.show
 end;
 
 end.

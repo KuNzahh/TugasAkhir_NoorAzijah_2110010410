@@ -1,8 +1,8 @@
 object WaliKelas: TWaliKelas
-  Left = 503
-  Top = 138
+  Left = 678
+  Top = 115
   Width = 662
-  Height = 533
+  Height = 536
   Caption = 'Data Wali Kelas'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,6 +11,7 @@ object WaliKelas: TWaliKelas
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
@@ -171,6 +172,7 @@ object WaliKelas: TWaliKelas
     Height = 25
     Caption = 'Baru'
     TabOrder = 3
+    OnClick = btn1Click
   end
   object btn3: TButton
     Left = 264
@@ -179,6 +181,7 @@ object WaliKelas: TWaliKelas
     Height = 25
     Caption = 'Edit'
     TabOrder = 4
+    OnClick = btn3Click
   end
   object btn4: TButton
     Left = 368
@@ -187,6 +190,7 @@ object WaliKelas: TWaliKelas
     Height = 25
     Caption = 'Hapus'
     TabOrder = 5
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 472
@@ -195,6 +199,7 @@ object WaliKelas: TWaliKelas
     Height = 25
     Caption = 'Batal'
     TabOrder = 6
+    OnClick = btn5Click
   end
   object btn2: TButton
     Left = 152
@@ -203,6 +208,7 @@ object WaliKelas: TWaliKelas
     Height = 25
     Caption = 'Simpan'
     TabOrder = 7
+    OnClick = btn2Click
   end
   object edt4: TEdit
     Left = 152
@@ -225,21 +231,21 @@ object WaliKelas: TWaliKelas
     Height = 21
     TabOrder = 10
   end
-  object edt8: TEdit
+  object edt7: TEdit
     Left = 152
     Top = 184
     Width = 393
     Height = 21
     TabOrder = 11
   end
-  object edt9: TEdit
+  object edt8: TEdit
     Left = 152
     Top = 208
     Width = 393
     Height = 21
     TabOrder = 12
   end
-  object edt10: TEdit
+  object edt9: TEdit
     Left = 152
     Top = 232
     Width = 393
@@ -251,11 +257,27 @@ object WaliKelas: TWaliKelas
     Top = 296
     Width = 513
     Height = 169
+    DataSource = dsWaliKelas
     TabOrder = 14
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrdWaliKelasCellClick
+  end
+  object ZQuery1: TZQuery
+    Connection = MenuAwal.ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from wali_kelas')
+    Params = <>
+    Left = 576
+    Top = 64
+  end
+  object dsWaliKelas: TDataSource
+    DataSet = ZQuery1
+    Left = 576
+    Top = 120
   end
 end

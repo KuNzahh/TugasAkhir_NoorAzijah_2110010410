@@ -1,6 +1,6 @@
 object MenuAwal: TMenuAwal
-  Left = 292
-  Top = 168
+  Left = 398
+  Top = 139
   Width = 928
   Height = 480
   Caption = 'Menu'
@@ -51,6 +51,7 @@ object MenuAwal: TMenuAwal
       end
       object DataOrtu1: TMenuItem
         Caption = 'Data Ortu'
+        OnClick = DataOrtu1Click
       end
       object DataKelas1: TMenuItem
         Caption = 'Data Kelas'
@@ -58,6 +59,7 @@ object MenuAwal: TMenuAwal
       end
       object DataWaliKelas1: TMenuItem
         Caption = 'Data Wali Kelas'
+        OnClick = DataWaliKelas1Click
       end
       object DataSemester1: TMenuItem
         Caption = 'Data Semester'
@@ -70,6 +72,7 @@ object MenuAwal: TMenuAwal
       end
       object DataUser1: TMenuItem
         Caption = 'Data User'
+        OnClick = DataUser1Click
       end
     end
   end

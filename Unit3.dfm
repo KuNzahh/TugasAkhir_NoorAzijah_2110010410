@@ -1,8 +1,8 @@
 object Ortu: TOrtu
-  Left = 482
-  Top = 110
+  Left = 425
+  Top = 106
   Width = 643
-  Height = 591
+  Height = 590
   Caption = 'Data Orang Tua'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,6 +11,7 @@ object Ortu: TOrtu
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
@@ -184,6 +185,7 @@ object Ortu: TOrtu
     Height = 25
     Caption = 'Baru'
     TabOrder = 3
+    OnClick = btn1Click
   end
   object btn3: TButton
     Left = 272
@@ -192,6 +194,7 @@ object Ortu: TOrtu
     Height = 25
     Caption = 'Edit'
     TabOrder = 4
+    OnClick = btn3Click
   end
   object btn4: TButton
     Left = 376
@@ -200,6 +203,7 @@ object Ortu: TOrtu
     Height = 25
     Caption = 'Hapus'
     TabOrder = 5
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 480
@@ -208,6 +212,7 @@ object Ortu: TOrtu
     Height = 25
     Caption = 'Batal'
     TabOrder = 6
+    OnClick = btn5Click
   end
   object btn2: TButton
     Left = 160
@@ -216,6 +221,7 @@ object Ortu: TOrtu
     Height = 25
     Caption = 'Simpan'
     TabOrder = 7
+    OnClick = btn2Click
   end
   object edt4: TEdit
     Left = 152
@@ -238,14 +244,14 @@ object Ortu: TOrtu
     Height = 21
     TabOrder = 10
   end
-  object edt8: TEdit
+  object edt7: TEdit
     Left = 152
     Top = 184
     Width = 393
     Height = 21
     TabOrder = 11
   end
-  object edt9: TEdit
+  object edt8: TEdit
     Left = 152
     Top = 208
     Width = 393
@@ -254,28 +260,44 @@ object Ortu: TOrtu
   end
   object edt10: TEdit
     Left = 152
-    Top = 232
-    Width = 393
-    Height = 21
-    TabOrder = 13
-  end
-  object edt12: TEdit
-    Left = 152
     Top = 256
     Width = 393
     Height = 21
-    TabOrder = 14
+    TabOrder = 13
   end
   object dbgrdortu: TDBGrid
     Left = 48
     Top = 320
     Width = 545
     Height = 217
-    TabOrder = 15
+    DataSource = dsOrtu
+    TabOrder = 14
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrdortuCellClick
+  end
+  object edt9: TEdit
+    Left = 152
+    Top = 232
+    Width = 393
+    Height = 21
+    TabOrder = 15
+  end
+  object dsOrtu: TDataSource
+    DataSet = ZQuery1
+    Left = 576
+    Top = 104
+  end
+  object ZQuery1: TZQuery
+    Connection = MenuAwal.ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from ortu')
+    Params = <>
+    Left = 576
+    Top = 48
   end
 end

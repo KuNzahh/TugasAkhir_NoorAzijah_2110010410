@@ -1,6 +1,6 @@
 object Kelas: TKelas
-  Left = 504
-  Top = 152
+  Left = 380
+  Top = 150
   Width = 656
   Height = 480
   Caption = 'Data Kelas'
