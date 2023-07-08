@@ -27,22 +27,9 @@ object Kelas: TKelas
     Font.Style = []
     ParentFont = False
   end
-  object lbl2: TLabel
-    Left = 56
-    Top = 64
-    Width = 47
-    Height = 14
-    Caption = ' ID Kelas'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object lbl3: TLabel
     Left = 56
-    Top = 96
+    Top = 64
     Width = 61
     Height = 14
     Caption = 'Nama Kelas'
@@ -55,7 +42,7 @@ object Kelas: TKelas
   end
   object lbl4: TLabel
     Left = 56
-    Top = 128
+    Top = 96
     Width = 41
     Height = 14
     Caption = 'Jurusan'
@@ -80,20 +67,13 @@ object Kelas: TKelas
     Height = 21
     TabOrder = 1
   end
-  object edt3: TEdit
-    Left = 152
-    Top = 128
-    Width = 393
-    Height = 21
-    TabOrder = 2
-  end
   object btn1: TButton
     Left = 56
     Top = 176
     Width = 75
     Height = 25
     Caption = 'Baru'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = btn1Click
   end
   object btn3: TButton
@@ -102,7 +82,7 @@ object Kelas: TKelas
     Width = 75
     Height = 25
     Caption = 'Edit'
-    TabOrder = 4
+    TabOrder = 3
     OnClick = btn3Click
   end
   object btn4: TButton
@@ -111,7 +91,7 @@ object Kelas: TKelas
     Width = 75
     Height = 25
     Caption = 'Hapus'
-    TabOrder = 5
+    TabOrder = 4
     OnClick = btn4Click
   end
   object btn5: TButton
@@ -120,7 +100,7 @@ object Kelas: TKelas
     Width = 75
     Height = 25
     Caption = 'Batal'
-    TabOrder = 6
+    TabOrder = 5
     OnClick = btn5Click
   end
   object dbgrdkelas: TDBGrid
@@ -129,7 +109,7 @@ object Kelas: TKelas
     Width = 521
     Height = 185
     DataSource = dsKelas
-    TabOrder = 7
+    TabOrder = 6
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -143,7 +123,7 @@ object Kelas: TKelas
     Width = 75
     Height = 25
     Caption = 'Simpan'
-    TabOrder = 8
+    TabOrder = 7
     OnClick = btn2Click
   end
   object ZQuery1: TZQuery
