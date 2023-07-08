@@ -1,6 +1,6 @@
-object Point: TPoint
-  Left = 538
-  Top = 162
+object poin: Tpoin
+  Left = 431
+  Top = 135
   Width = 645
   Height = 480
   Caption = 'Data Point'
@@ -11,6 +11,7 @@ object Point: TPoint
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
@@ -119,7 +120,7 @@ object Point: TPoint
     Height = 21
     TabOrder = 3
   end
-  object Edit1: TEdit
+  object edt5: TEdit
     Left = 152
     Top = 136
     Width = 393
@@ -133,6 +134,7 @@ object Point: TPoint
     Height = 25
     Caption = 'Baru'
     TabOrder = 5
+    OnClick = btn1Click
   end
   object btn3: TButton
     Left = 264
@@ -141,6 +143,7 @@ object Point: TPoint
     Height = 25
     Caption = 'Edit'
     TabOrder = 6
+    OnClick = btn3Click
   end
   object btn4: TButton
     Left = 368
@@ -149,6 +152,7 @@ object Point: TPoint
     Height = 25
     Caption = 'Hapus'
     TabOrder = 7
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 472
@@ -157,6 +161,7 @@ object Point: TPoint
     Height = 25
     Caption = 'Batal'
     TabOrder = 8
+    OnClick = btn5Click
   end
   object btn2: TButton
     Left = 152
@@ -165,17 +170,34 @@ object Point: TPoint
     Height = 25
     Caption = 'Simpan'
     TabOrder = 9
+    OnClick = btn2Click
   end
   object dbgrduser: TDBGrid
     Left = 48
     Top = 200
     Width = 505
     Height = 209
+    DataSource = dspoin
     TabOrder = 10
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrduserCellClick
+  end
+  object dspoin: TDataSource
+    DataSet = ZQuery1
+    Left = 568
+    Top = 88
+  end
+  object ZQuery1: TZQuery
+    Connection = MenuAwal.ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select *from poin')
+    Params = <>
+    Left = 560
+    Top = 32
   end
 end

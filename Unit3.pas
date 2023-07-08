@@ -81,7 +81,7 @@ end;
 
 procedure TOrtu.btn1Click(Sender: TObject);
 begin
-  edt1.Clear;
+ edt1.Clear;
  editenabled;
 
  edt1.Enabled:= True;

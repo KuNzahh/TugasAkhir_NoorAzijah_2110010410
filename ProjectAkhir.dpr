@@ -8,7 +8,7 @@ uses
   Unit4 in 'Unit4.pas' {Siswa},
   Unit1 in 'Unit1.pas' {WaliKelas},
   Unit5 in 'Unit5.pas' {Semester},
-  Unit6 in 'Unit6.pas' {Point},
+  Unit6 in 'Unit6.pas' {poin},
   Unit7 in 'Unit7.pas' {Hubungan},
   Unit8 in 'Unit8.pas' {User},
   Unit9 in 'Unit9.pas' {Login};
@@ -23,7 +23,7 @@ begin
   Application.CreateForm(TSiswa, Siswa);
   Application.CreateForm(TWaliKelas, WaliKelas);
   Application.CreateForm(TSemester, Semester);
-  Application.CreateForm(TPoint, Point);
+  Application.CreateForm(Tpoin, poin);
   Application.CreateForm(THubungan, Hubungan);
   Application.CreateForm(TUser, User);
   Application.CreateForm(TLogin, Login);

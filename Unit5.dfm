@@ -1,7 +1,7 @@
 object Semester: TSemester
-  Left = 519
+  Left = 421
   Top = 92
-  Width = 601
+  Width = 635
   Height = 577
   Caption = 'Data Semester'
   Color = clBtnFace
@@ -11,6 +11,7 @@ object Semester: TSemester
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
@@ -93,7 +94,7 @@ object Semester: TSemester
   end
   object lbl7: TLabel
     Left = 40
-    Top = 184
+    Top = 208
     Width = 52
     Height = 14
     Caption = 'Semester'
@@ -106,7 +107,7 @@ object Semester: TSemester
   end
   object lbl8: TLabel
     Left = 40
-    Top = 208
+    Top = 232
     Width = 35
     Height = 14
     Caption = 'Status'
@@ -132,10 +133,23 @@ object Semester: TSemester
   end
   object lbl11: TLabel
     Left = 40
-    Top = 232
+    Top = 256
     Width = 72
     Height = 14
     Caption = 'Tingkat Kelas'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 40
+    Top = 184
+    Width = 43
+    Height = 14
+    Caption = 'Tanggal'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -166,43 +180,48 @@ object Semester: TSemester
   end
   object btn1: TButton
     Left = 32
-    Top = 264
+    Top = 288
     Width = 75
     Height = 25
     Caption = 'Baru'
     TabOrder = 3
+    OnClick = btn1Click
   end
   object btn3: TButton
     Left = 248
-    Top = 264
+    Top = 288
     Width = 75
     Height = 25
     Caption = 'Edit'
     TabOrder = 4
+    OnClick = btn3Click
   end
   object btn4: TButton
     Left = 352
-    Top = 264
+    Top = 288
     Width = 75
     Height = 25
     Caption = 'Hapus'
     TabOrder = 5
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 456
-    Top = 264
+    Top = 288
     Width = 75
     Height = 25
     Caption = 'Batal'
     TabOrder = 6
+    OnClick = btn5Click
   end
   object btn2: TButton
     Left = 136
-    Top = 264
+    Top = 288
     Width = 75
     Height = 25
     Caption = 'Simpan'
     TabOrder = 7
+    OnClick = btn2Click
   end
   object edt4: TEdit
     Left = 136
@@ -225,21 +244,21 @@ object Semester: TSemester
     Height = 21
     TabOrder = 10
   end
-  object edt8: TEdit
+  object edt7: TEdit
     Left = 136
     Top = 184
     Width = 393
     Height = 21
     TabOrder = 11
   end
-  object edt9: TEdit
+  object edt8: TEdit
     Left = 136
     Top = 208
     Width = 393
     Height = 21
     TabOrder = 12
   end
-  object edt10: TEdit
+  object edt9: TEdit
     Left = 136
     Top = 232
     Width = 393
@@ -248,14 +267,37 @@ object Semester: TSemester
   end
   object dbgrdkelas: TDBGrid
     Left = 32
-    Top = 312
+    Top = 336
     Width = 521
     Height = 185
+    DataSource = dssemster
     TabOrder = 14
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrdkelasCellClick
+  end
+  object edt10: TEdit
+    Left = 136
+    Top = 256
+    Width = 393
+    Height = 21
+    TabOrder = 15
+  end
+  object dssemster: TDataSource
+    DataSet = ZQuery1
+    Left = 552
+    Top = 88
+  end
+  object ZQuery1: TZQuery
+    Connection = MenuAwal.ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from semester')
+    Params = <>
+    Left = 560
+    Top = 40
   end
 end

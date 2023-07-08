@@ -63,6 +63,7 @@ object MenuAwal: TMenuAwal
       end
       object DataSemester1: TMenuItem
         Caption = 'Data Semester'
+        OnClick = DataSemester1Click
       end
       object DataHubungan1: TMenuItem
         Caption = 'Data Hubungan'
@@ -70,6 +71,7 @@ object MenuAwal: TMenuAwal
       end
       object DataPoint1: TMenuItem
         Caption = 'Data Point'
+        OnClick = DataPoint1Click
       end
       object DataUser1: TMenuItem
         Caption = 'Data User'
