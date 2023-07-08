@@ -1,6 +1,6 @@
 object WaliKelas: TWaliKelas
-  Left = 678
-  Top = 115
+  Left = 205
+  Top = 120
   Width = 662
   Height = 536
   Caption = 'Data Wali Kelas'
@@ -27,22 +27,9 @@ object WaliKelas: TWaliKelas
     Font.Style = []
     ParentFont = False
   end
-  object lbl2: TLabel
-    Left = 48
-    Top = 40
-    Width = 73
-    Height = 14
-    Caption = ' ID Wali Kelas'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object lbl3: TLabel
     Left = 56
-    Top = 64
+    Top = 40
     Width = 19
     Height = 14
     Caption = 'NIK'
@@ -55,7 +42,7 @@ object WaliKelas: TWaliKelas
   end
   object Label1: TLabel
     Left = 56
-    Top = 88
+    Top = 64
     Width = 87
     Height = 14
     Caption = 'Nama Wali Kelas'
@@ -68,7 +55,7 @@ object WaliKelas: TWaliKelas
   end
   object lbl5: TLabel
     Left = 56
-    Top = 112
+    Top = 88
     Width = 71
     Height = 14
     Caption = 'Jenis Kelamin'
@@ -81,7 +68,7 @@ object WaliKelas: TWaliKelas
   end
   object lbl6: TLabel
     Left = 56
-    Top = 136
+    Top = 112
     Width = 58
     Height = 14
     Caption = 'Pendidikan'
@@ -94,7 +81,7 @@ object WaliKelas: TWaliKelas
   end
   object lbl7: TLabel
     Left = 56
-    Top = 184
+    Top = 160
     Width = 78
     Height = 14
     Caption = 'Mata Pelajaran'
@@ -107,7 +94,7 @@ object WaliKelas: TWaliKelas
   end
   object lbl8: TLabel
     Left = 56
-    Top = 208
+    Top = 184
     Width = 37
     Height = 14
     Caption = 'Alamat'
@@ -120,7 +107,7 @@ object WaliKelas: TWaliKelas
   end
   object lbl9: TLabel
     Left = 56
-    Top = 160
+    Top = 136
     Width = 47
     Height = 14
     Caption = 'No. Telp'
@@ -133,7 +120,7 @@ object WaliKelas: TWaliKelas
   end
   object lbl11: TLabel
     Left = 56
-    Top = 232
+    Top = 208
     Width = 35
     Height = 14
     Caption = 'Status'
@@ -158,56 +145,49 @@ object WaliKelas: TWaliKelas
     Height = 21
     TabOrder = 1
   end
-  object edt3: TEdit
-    Left = 152
-    Top = 88
-    Width = 393
-    Height = 21
-    TabOrder = 2
-  end
   object btn1: TButton
-    Left = 48
-    Top = 264
+    Left = 56
+    Top = 240
     Width = 75
     Height = 25
     Caption = 'Baru'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = btn1Click
   end
   object btn3: TButton
-    Left = 264
-    Top = 264
+    Left = 272
+    Top = 240
     Width = 75
     Height = 25
     Caption = 'Edit'
-    TabOrder = 4
+    TabOrder = 3
     OnClick = btn3Click
   end
   object btn4: TButton
-    Left = 368
-    Top = 264
+    Left = 376
+    Top = 240
     Width = 75
     Height = 25
     Caption = 'Hapus'
-    TabOrder = 5
+    TabOrder = 4
     OnClick = btn4Click
   end
   object btn5: TButton
-    Left = 472
-    Top = 264
+    Left = 480
+    Top = 240
     Width = 75
     Height = 25
     Caption = 'Batal'
-    TabOrder = 6
+    TabOrder = 5
     OnClick = btn5Click
   end
   object btn2: TButton
-    Left = 152
-    Top = 264
+    Left = 160
+    Top = 240
     Width = 75
     Height = 25
     Caption = 'Simpan'
-    TabOrder = 7
+    TabOrder = 6
     OnClick = btn2Click
   end
   object edt4: TEdit
@@ -215,56 +195,58 @@ object WaliKelas: TWaliKelas
     Top = 112
     Width = 393
     Height = 21
-    TabOrder = 8
+    TabOrder = 7
   end
   object edt5: TEdit
     Left = 152
     Top = 136
     Width = 393
     Height = 21
-    TabOrder = 9
+    TabOrder = 8
   end
   object edt6: TEdit
     Left = 152
     Top = 160
     Width = 393
     Height = 21
-    TabOrder = 10
+    TabOrder = 9
   end
   object edt7: TEdit
     Left = 152
     Top = 184
     Width = 393
     Height = 21
-    TabOrder = 11
-  end
-  object edt8: TEdit
-    Left = 152
-    Top = 208
-    Width = 393
-    Height = 21
-    TabOrder = 12
-  end
-  object edt9: TEdit
-    Left = 152
-    Top = 232
-    Width = 393
-    Height = 21
-    TabOrder = 13
+    TabOrder = 10
   end
   object dbgrdWaliKelas: TDBGrid
-    Left = 48
-    Top = 296
+    Left = 56
+    Top = 280
     Width = 513
     Height = 169
     DataSource = dsWaliKelas
-    TabOrder = 14
+    TabOrder = 11
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     OnCellClick = dbgrdWaliKelasCellClick
+  end
+  object cbb1: TComboBox
+    Left = 152
+    Top = 88
+    Width = 393
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 12
+  end
+  object cbb2: TComboBox
+    Left = 152
+    Top = 208
+    Width = 393
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 13
   end
   object ZQuery1: TZQuery
     Connection = MenuAwal.ZConnection1

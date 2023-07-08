@@ -27,22 +27,9 @@ object User: TUser
     Font.Style = []
     ParentFont = False
   end
-  object lbl2: TLabel
-    Left = 48
-    Top = 40
-    Width = 44
-    Height = 14
-    Caption = ' ID User'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object lbl3: TLabel
-    Left = 56
-    Top = 64
+    Left = 80
+    Top = 40
     Width = 54
     Height = 14
     Caption = 'Username'
@@ -54,8 +41,8 @@ object User: TUser
     ParentFont = False
   end
   object Label1: TLabel
-    Left = 56
-    Top = 88
+    Left = 80
+    Top = 64
     Width = 51
     Height = 14
     Caption = 'Password'
@@ -67,8 +54,8 @@ object User: TUser
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 56
-    Top = 112
+    Left = 80
+    Top = 88
     Width = 28
     Height = 14
     Caption = 'Level'
@@ -80,8 +67,8 @@ object User: TUser
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 56
-    Top = 136
+    Left = 80
+    Top = 112
     Width = 35
     Height = 14
     Caption = 'Status'
@@ -115,7 +102,7 @@ object User: TUser
   end
   object btn1: TButton
     Left = 56
-    Top = 168
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'Baru'
@@ -124,7 +111,7 @@ object User: TUser
   end
   object btn3: TButton
     Left = 272
-    Top = 168
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'Edit'
@@ -133,7 +120,7 @@ object User: TUser
   end
   object btn4: TButton
     Left = 376
-    Top = 168
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'Hapus'
@@ -142,7 +129,7 @@ object User: TUser
   end
   object btn5: TButton
     Left = 480
-    Top = 168
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'Batal'
@@ -151,7 +138,7 @@ object User: TUser
   end
   object btn2: TButton
     Left = 160
-    Top = 168
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'Simpan'
@@ -160,7 +147,7 @@ object User: TUser
   end
   object dbgrduser: TDBGrid
     Left = 56
-    Top = 208
+    Top = 192
     Width = 505
     Height = 209
     DataSource = dsuser
@@ -172,19 +159,13 @@ object User: TUser
     TitleFont.Style = []
     OnCellClick = dbgrduserCellClick
   end
-  object edt4: TEdit
+  object cbb1: TComboBox
     Left = 152
     Top = 112
     Width = 393
     Height = 21
+    ItemHeight = 13
     TabOrder = 9
-  end
-  object edt5: TEdit
-    Left = 152
-    Top = 136
-    Width = 393
-    Height = 21
-    TabOrder = 10
   end
   object dsuser: TDataSource
     DataSet = ZQuery1

@@ -10,16 +10,13 @@ uses
 type
   Tpoin = class(TForm)
     lbl1: TLabel;
-    lbl2: TLabel;
     lbl3: TLabel;
     Label1: TLabel;
     lbl5: TLabel;
     edt1: TEdit;
     edt2: TEdit;
     edt3: TEdit;
-    edt4: TEdit;
     Label2: TLabel;
-    edt5: TEdit;
     btn1: TButton;
     btn3: TButton;
     btn4: TButton;
@@ -28,6 +25,7 @@ type
     dbgrduser: TDBGrid;
     dspoin: TDataSource;
     ZQuery1: TZQuery;
+    cbb1: TComboBox;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -47,6 +45,7 @@ type
 
 var
   poin: Tpoin;
+  id : string;
 
 implementation
 
@@ -60,8 +59,7 @@ begin
  edt1.Clear;
  edt2.Clear;
  edt3.Clear;
- edt4.Clear;
- edt5.Clear;
+ cbb1.Clear;
 end;
 
 procedure Tpoin.btn1Click(Sender: TObject);
@@ -72,8 +70,7 @@ begin
  edt1.Enabled:= True;
  edt2.Enabled:= True;
  edt3.Enabled:= True;
- edt4.Enabled:= True;
- edt5.Enabled:= True;
+ cbb1.Enabled:= True;
 
  btn1.Enabled:= False;
  btn2.Enabled:= True;
@@ -84,7 +81,7 @@ end;
 procedure Tpoin.btn2Click(Sender: TObject);
 begin
  ZQuery1.SQL.Clear;
- ZQuery1.SQL.Add('insert into poin values("'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'")');
+ ZQuery1.SQL.Add('insert into poin values(null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+id+'")');
  ZQuery1.ExecSQL;
 
  ZQuery1.SQL.Clear;
@@ -97,7 +94,7 @@ procedure Tpoin.btn3Click(Sender: TObject);
 begin
   ShowMessage('DATA BERHASIL DIUPDATE!') ;
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('Update poin set nama_poin= "'+edt2.Text+'", bobot="'+edt3.Text+'", jenis="'+edt4.Text+'", status="'+edt5.Text+'" where poin.id="'+edt1.Text+'"');
+  ZQuery1.SQL.Add('Update poin set nama_poin= "'+edt1.Text+'", bobot="'+edt2.Text+'", jenis="'+edt3.Text+'", status="'+cbb1.Text+'" where poin.id="'+id+'"');
   ZQuery1.ExecSQL;
 
   ZQuery1.SQL.Clear;
@@ -108,7 +105,7 @@ end;
 procedure Tpoin.btn4Click(Sender: TObject);
 begin
    ZQuery1.SQL.Clear;
-   ZQuery1.SQL.Add('delete from poin where id="'+edt1.Text+'"');
+   ZQuery1.SQL.Add('delete from poin where id="'+id+'"');
    ZQuery1.ExecSQL;
 
    ZQuery1.SQL.Clear;
@@ -125,7 +122,7 @@ end;
 procedure Tpoin.editclear;
 begin
  edt1.Text:= ''; edt2.Text:= ''; edt3.Text:= '';
- edt4.Text:= ''; edt5.Text:= '';
+ cbb1.Text:= '';
 end;
 
 procedure Tpoin.editenabled;
@@ -133,8 +130,7 @@ begin
  edt1.Enabled:= True;
  edt2.Enabled:= True;
  edt3.Enabled:= True;
- edt4.Enabled:=True;
- edt5.Enabled:=True;
+ cbb1.Enabled:=True;
 end;
 
 procedure Tpoin.posisiawal;
@@ -148,23 +144,20 @@ begin
  edt1.Enabled:=False;
  edt2.Enabled:=False;
  edt3.Enabled:=False;
- edt4.Enabled:=False;
- edt5.Enabled:=False;
+ cbb1.Enabled:=False;
 end;
 
 procedure Tpoin.dbgrduserCellClick(Column: TColumn);
 begin
- edt1.Text:=ZQuery1.FieldList[0].AsString;
-  edt2.Text:=ZQuery1.FieldList[1].AsString;
-  edt3.Text:=ZQuery1.FieldList[2].AsString;
-  edt4.Text:=ZQuery1.FieldList[3].AsString;
-  edt5.Text:=ZQuery1.FieldList[4].AsString;
+  id:= ZQuery1.Fields[0].AsString;
+  edt1.Text:=ZQuery1.FieldList[1].AsString;
+  edt2.Text:=ZQuery1.FieldList[2].AsString;
+  edt3.Text:=ZQuery1.FieldList[3].AsString;
 
   edt1.Enabled:= True;
   edt2.Enabled:= True;
   edt3.Enabled:= True;
-  edt4.Enabled:=True;
-  edt5.Enabled:=True;
+  cbb1.Enabled:=True;
 
   btn1.Enabled:= false;
   btn2.Enabled:= False;
@@ -176,13 +169,12 @@ end;
 procedure Tpoin.FormCreate(Sender: TObject);
 begin
  edt1.Text:= ''; edt2.Text:= ''; edt3.Text:= '';
- edt4.Text:= ''; edt5.Text:= '';
+ cbb1.Text:= '';
 
  edt1.Enabled:= False;
  edt2.Enabled:= False;
  edt3.Enabled:= False;
- edt4.Enabled:=False;
- edt5.Enabled:=False;
+ cbb1.Enabled:=False;
 
  btn1.Enabled:= True;
  btn2.Enabled:= False;

@@ -10,7 +10,6 @@ uses
 type
   TSemester = class(TForm)
     lbl1: TLabel;
-    lbl2: TLabel;
     lbl3: TLabel;
     Label1: TLabel;
     lbl5: TLabel;
@@ -31,13 +30,12 @@ type
     edt5: TEdit;
     edt6: TEdit;
     edt7: TEdit;
-    edt8: TEdit;
     edt9: TEdit;
     dbgrdkelas: TDBGrid;
     Label2: TLabel;
-    edt10: TEdit;
     dssemster: TDataSource;
     ZQuery1: TZQuery;
+    cbb1: TComboBox;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -57,6 +55,7 @@ type
 
 var
   Semester: TSemester;
+  id :String;
 
 implementation
 
@@ -74,25 +73,14 @@ begin
  edt5.Clear;
  edt6.Clear;
  edt7.Clear;
- edt8.Clear;
+ cbb1.Clear;
  edt9.Clear;
- edt10.Clear;
 end;
 
 procedure TSemester.btn1Click(Sender: TObject);
 begin
  edt1.Clear;
  editenabled;
-
- edt1.Enabled:= True;
- edt2.Enabled:= True;
- edt3.Enabled:= True;
- edt4.Enabled:= True;
- edt5.Enabled:= True;
- edt6.Enabled:= True;
- edt7.Enabled:= True;
- edt8.Enabled:= True;
- edt9.Enabled:= True;
 
  btn1.Enabled:= False;
  btn2.Enabled:= True;
@@ -103,7 +91,7 @@ end;
 procedure TSemester.btn2Click(Sender: TObject);
 begin
  ZQuery1.SQL.Clear;
- ZQuery1.SQL.Add('insert into semester values("'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'","'+edt6.Text+'","'+edt7.Text+'","'+edt8.Text+'","'+edt9.Text+'","'+edt10.Text+'")');
+ ZQuery1.SQL.Add('insert into semester values(null, "'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'","'+edt6.Text+'","'+edt7.Text+'","'+cbb1.Text+'","'+edt9.Text+'")');
  ZQuery1.ExecSQL;
 
  ZQuery1.SQL.Clear;
@@ -116,7 +104,7 @@ procedure TSemester.btn3Click(Sender: TObject);
 begin
  ShowMessage('DATA BERHASIL DIUPDATE!') ;
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('Update semester set siswa_id= "'+edt2.Text+'", point_id="'+edt3.Text+'", wali_id="'+edt4.Text+'", ortu_id="'+edt5.Text+'", kelas_id="'+edt6.Text+'", tanggal="'+edt7.Text+'", semester="'+edt8.Text+'", status="'+edt9.Text+'", tingkat_kelas="'+edt10.Text+'" where semester.id="'+edt1.Text+'"');
+  ZQuery1.SQL.Add('Update semester set siswa_id= "'+edt1.Text+'", point_id="'+edt2.Text+'", wali_id="'+edt3.Text+'", ortu_id="'+edt4.Text+'", kelas_id="'+edt5.Text+'", tanggal="'+edt6.Text+'", semester="'+edt7.Text+'", status="'+cbb1.Text+'", tingkat_kelas="'+edt9.Text+'" where semester.id="'+id+'"');
   ZQuery1.ExecSQL;
 
   ZQuery1.SQL.Clear;
@@ -127,7 +115,7 @@ end;
 procedure TSemester.btn4Click(Sender: TObject);
 begin
    ZQuery1.SQL.Clear;
-   ZQuery1.SQL.Add('delete from semester where id="'+edt1.Text+'"');
+   ZQuery1.SQL.Add('delete from semester where id="'+id+'"');
    ZQuery1.ExecSQL;
 
    ZQuery1.SQL.Clear;
@@ -145,8 +133,7 @@ procedure TSemester.editclear;
 begin
  edt1.Text:= ''; edt2.Text:= ''; edt3.Text:= '';
  edt4.Text:= ''; edt5.Text:= ''; edt6.Text:= '';
- edt7.Text:= ''; edt8.Text:= ''; edt9.Text:= '';
- edt10.Text:= '';
+ edt7.Text:= ''; cbb1.Text:= ''; edt9.Text:= '';
 end;
 
 procedure TSemester.editenabled;
@@ -158,9 +145,8 @@ begin
  edt5.Enabled:=True;
  edt6.Enabled:=True;
  edt7.Enabled:=True;
- edt8.Enabled:=True;
+ cbb1.Enabled:=True;
  edt9.Enabled:=True;
- edt10.Enabled:=True;
 end;
 
 procedure TSemester.posisiawal;
@@ -178,16 +164,15 @@ begin
  edt5.Enabled:=False;
  edt6.Enabled:=False;
  edt7.Enabled:=False;
- edt8.Enabled:=False;
+ cbb1.Enabled:=False;
  edt9.Enabled:=False;
- edt10.Enabled:=False;
 end;
 
 procedure TSemester.FormCreate(Sender: TObject);
 begin
  edt1.Text:= ''; edt2.Text:= ''; edt3.Text:= '';
  edt4.Text:= ''; edt5.Text:= ''; edt6.Text:= '';
- edt7.Text:= ''; edt8.Text:= ''; edt9.Text:= '';
+ edt7.Text:= ''; cbb1.Text:= ''; edt9.Text:= '';
 
  edt1.Enabled:= False;
  edt2.Enabled:= False;
@@ -196,9 +181,8 @@ begin
  edt5.Enabled:=False;
  edt6.Enabled:=False;
  edt7.Enabled:=False;
- edt8.Enabled:=False;
+ cbb1.Enabled:=False;
  edt9.Enabled:=False;
- edt10.Enabled:=False;
 
  btn1.Enabled:= True;
  btn2.Enabled:= False;
@@ -209,16 +193,16 @@ end;
 
 procedure TSemester.dbgrdkelasCellClick(Column: TColumn);
 begin
- edt1.Text:=ZQuery1.FieldList[0].AsString;
-  edt2.Text:=ZQuery1.FieldList[1].AsString;
-  edt3.Text:=ZQuery1.FieldList[2].AsString;
-  edt4.Text:=ZQuery1.FieldList[3].AsString;
-  edt5.Text:=ZQuery1.FieldList[4].AsString;
-  edt6.Text:=ZQuery1.FieldList[5].AsString;
-  edt7.Text:=ZQuery1.FieldList[6].AsString;
-  edt8.Text:=ZQuery1.FieldList[7].AsString;
-  edt9.Text:=ZQuery1.FieldList[8].AsString;
-  edt10.Text:=ZQuery1.FieldList[9].AsString;
+  id:= ZQuery1.Fields[0].AsString;
+  edt1.Text:=ZQuery1.FieldList[1].AsString;
+  edt2.Text:=ZQuery1.FieldList[2].AsString;
+  edt3.Text:=ZQuery1.FieldList[3].AsString;
+  edt4.Text:=ZQuery1.FieldList[4].AsString;
+  edt5.Text:=ZQuery1.FieldList[5].AsString;
+  edt6.Text:=ZQuery1.FieldList[6].AsString;
+  edt7.Text:=ZQuery1.FieldList[7].AsString;
+  cbb1.Text:=ZQuery1.FieldList[8].AsString;
+  edt9.Text:=ZQuery1.FieldList[9].AsString;
 
   edt1.Enabled:= True;
   edt2.Enabled:= True;
@@ -227,9 +211,8 @@ begin
   edt5.Enabled:=True;
   edt6.Enabled:=True;
   edt7.Enabled:=True;
-  edt8.Enabled:=True;
+  cbb1.Enabled:=True;
   edt9.Enabled:=True;
-  edt10.Enabled:=True;
 
   btn1.Enabled:= false;
   btn2.Enabled:= False;

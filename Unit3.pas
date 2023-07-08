@@ -10,7 +10,6 @@ uses
 type
   TOrtu = class(TForm)
     lbl1: TLabel;
-    lbl2: TLabel;
     lbl3: TLabel;
     Label1: TLabel;
     lbl5: TLabel;
@@ -31,13 +30,12 @@ type
     edt4: TEdit;
     edt5: TEdit;
     edt6: TEdit;
-    edt7: TEdit;
     edt8: TEdit;
-    edt10: TEdit;
-    dbgrdortu: TDBGrid;
     edt9: TEdit;
     dsOrtu: TDataSource;
     ZQuery1: TZQuery;
+    cbb1: TComboBox;
+    dbgrd1: TDBGrid;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -49,6 +47,7 @@ type
     procedure editenabled;
     procedure dbgrdortuCellClick(Column: TColumn);
     procedure FormCreate(Sender: TObject);
+    procedure dbgrd1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -57,6 +56,7 @@ type
 
 var
   Ortu: TOrtu;
+  id : string;
 
 implementation
 
@@ -73,10 +73,9 @@ begin
  edt4.Clear;
  edt5.Clear;
  edt6.Clear;
- edt7.Clear;
+ cbb1.Clear;
  edt8.Clear;
  edt9.Clear;
- edt10.Clear;
 end;
 
 procedure TOrtu.btn1Click(Sender: TObject);
@@ -90,7 +89,7 @@ begin
  edt4.Enabled:= True;
  edt5.Enabled:= True;
  edt6.Enabled:= True;
- edt7.Enabled:= True;
+ cbb1.Enabled:= True;
  edt8.Enabled:= True;
  edt9.Enabled:= True;
 
@@ -103,7 +102,7 @@ end;
 procedure TOrtu.btn2Click(Sender: TObject);
 begin
  ZQuery1.SQL.Clear;
- ZQuery1.SQL.Add('insert into ortu values("'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'","'+edt6.Text+'","'+edt7.Text+'","'+edt8.Text+'","'+edt9.Text+'","'+edt10.Text+'")');
+ ZQuery1.SQL.Add('insert into ortu values(null, "'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'","'+edt6.Text+'","'+cbb1.Text+'","'+edt8.Text+'","'+edt9.Text+'")');
  ZQuery1.ExecSQL;
 
  ZQuery1.SQL.Clear;
@@ -116,7 +115,7 @@ procedure TOrtu.btn3Click(Sender: TObject);
 begin
    ShowMessage('DATA BERHASIL DIUPDATE!') ;
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('Update ortu set nik= "'+edt2.Text+'", nama_ortu="'+edt3.Text+'", pendidikan="'+edt4.Text+'", pekerjaan="'+edt5.Text+'", telp="'+edt6.Text+'", alamat="'+edt7.Text+'", jenis_kelamin="'+edt8.Text+'", agama="'+edt9.Text+'", id_active="'+edt10.Text+'"where ortu.id="'+edt1.Text+'"');
+  ZQuery1.SQL.Add('Update ortu set nik= "'+edt1.Text+'", nama_ortu="'+edt2.Text+'", pendidikan="'+edt3.Text+'", pekerjaan="'+edt4.Text+'", telp="'+edt5.Text+'", alamat="'+edt6.Text+'", jenis_kelamin="'+cbb1.Text+'", agama="'+edt8.Text+'", id_active="'+edt9.Text+'"where ortu.id="'+id+'"');
   ZQuery1.ExecSQL;
 
   ZQuery1.SQL.Clear;
@@ -127,7 +126,7 @@ end;
 procedure TOrtu.btn4Click(Sender: TObject);
 begin
  ZQuery1.SQL.Clear;
-   ZQuery1.SQL.Add('delete from ortu where id="'+edt1.Text+'"');
+   ZQuery1.SQL.Add('delete from ortu where id="'+id+'"');
    ZQuery1.ExecSQL;
 
    ZQuery1.SQL.Clear;
@@ -145,8 +144,7 @@ procedure TOrtu.editclear;
 begin
  edt1.Text:= ''; edt2.Text:= ''; edt3.Text:= '';
  edt4.Text:= ''; edt5.Text:= ''; edt6.Text:= '';
- edt7.Text:= ''; edt8.Text:= ''; edt9.Text:= '';
- edt10.Text:= '';
+ cbb1.Text:= ''; edt8.Text:= ''; edt9.Text:= '';
 end;
 
 procedure TOrtu.editenabled;
@@ -157,10 +155,9 @@ begin
  edt4.Enabled:=True;
  edt5.Enabled:=True;
  edt6.Enabled:=True;
- edt7.Enabled:=True;
+ cbb1.Enabled:=True;
  edt8.Enabled:=True;
  edt9.Enabled:=True;
- edt10.Enabled:=True;
 end;
 
 procedure TOrtu.posisiawal;
@@ -177,24 +174,24 @@ begin
  edt4.Enabled:=False;
  edt5.Enabled:=False;
  edt6.Enabled:=False;
- edt7.Enabled:=False;
+ cbb1.Enabled:=False;
  edt8.Enabled:=False;
  edt9.Enabled:=False;
- edt10.Enabled:=False;
 end;
 
 procedure TOrtu.dbgrdortuCellClick(Column: TColumn);
 begin
- edt1.Text:=ZQuery1.FieldList[0].AsString;
-  edt2.Text:=ZQuery1.FieldList[1].AsString;
-  edt3.Text:=ZQuery1.FieldList[2].AsString;
-  edt4.Text:=ZQuery1.FieldList[3].AsString;
-  edt5.Text:=ZQuery1.FieldList[4].AsString;
-  edt6.Text:=ZQuery1.FieldList[5].AsString;
-  edt7.Text:=ZQuery1.FieldList[6].AsString;
-  edt8.Text:=ZQuery1.FieldList[7].AsString;
-  edt9.Text:=ZQuery1.FieldList[8].AsString;
-  edt10.Text:=ZQuery1.FieldList[9].AsString;
+  id:= ZQuery1.Fields[0].AsString;
+ edt1.Text:=ZQuery1.FieldList[1].AsString;
+  edt2.Text:=ZQuery1.FieldList[2].AsString;
+  edt3.Text:=ZQuery1.FieldList[3].AsString;
+  edt4.Text:=ZQuery1.FieldList[4].AsString;
+  edt5.Text:=ZQuery1.FieldList[5].AsString;
+  edt6.Text:=ZQuery1.FieldList[6].AsString;
+  cbb1.Text:=ZQuery1.FieldList[7].AsString;
+  edt8.Text:=ZQuery1.FieldList[8].AsString;
+  edt9.Text:=ZQuery1.FieldList[9].AsString;
+
 
   edt1.Enabled:= True;
   edt2.Enabled:= True;
@@ -202,10 +199,9 @@ begin
   edt4.Enabled:=True;
   edt5.Enabled:=True;
   edt6.Enabled:=True;
-  edt7.Enabled:=True;
+  cbb1.Enabled:=True;
   edt8.Enabled:=True;
   edt9.Enabled:=True;
-  edt10.Enabled:=True;
 
   btn1.Enabled:= false;
   btn2.Enabled:= False;
@@ -218,7 +214,7 @@ procedure TOrtu.FormCreate(Sender: TObject);
 begin
  edt1.Text:= ''; edt2.Text:= ''; edt3.Text:= '';
  edt4.Text:= ''; edt5.Text:= ''; edt6.Text:= '';
- edt7.Text:= ''; edt8.Text:= ''; edt9.Text:= '';
+ cbb1.Text:= ''; edt8.Text:= ''; edt9.Text:= '';
 
  edt1.Enabled:= False;
  edt2.Enabled:= False;
@@ -226,16 +222,45 @@ begin
  edt4.Enabled:=False;
  edt5.Enabled:=False;
  edt6.Enabled:=False;
- edt7.Enabled:=False;
+ cbb1.Enabled:=False;
  edt8.Enabled:=False;
  edt9.Enabled:=False;
- edt10.Enabled:=False;
 
  btn1.Enabled:= True;
  btn2.Enabled:= False;
  btn3.Enabled:=False;
  btn4.Enabled:=False;
  btn5.Enabled:=False;
+end;
+
+procedure TOrtu.dbgrd1CellClick(Column: TColumn);
+begin
+  id:= ZQuery1.Fields[0].AsString;
+ edt1.Text:=ZQuery1.FieldList[1].AsString;
+  edt2.Text:=ZQuery1.FieldList[2].AsString;
+  edt3.Text:=ZQuery1.FieldList[3].AsString;
+  edt4.Text:=ZQuery1.FieldList[4].AsString;
+  edt5.Text:=ZQuery1.FieldList[5].AsString;
+  edt6.Text:=ZQuery1.FieldList[6].AsString;
+  cbb1.Text:=ZQuery1.FieldList[7].AsString;
+  edt8.Text:=ZQuery1.FieldList[8].AsString;
+  edt9.Text:=ZQuery1.FieldList[9].AsString;
+
+  edt1.Enabled:= True;
+  edt2.Enabled:= True;
+  edt3.Enabled:= True;
+  edt4.Enabled:=True;
+   edt5.Enabled:=True;
+   edt6.Enabled:=True;
+   cbb1.Enabled:=True;
+   edt8.Enabled:=True;
+   edt9.Enabled:=True;
+
+  btn1.Enabled:= false;
+  btn2.Enabled:= False;
+  btn3.Enabled:= True;
+  btn4.Enabled:= True;
+  btn5.Enabled:= True;
 end;
 
 end.

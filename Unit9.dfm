@@ -28,7 +28,7 @@ object Login: TLogin
   end
   object Label1: TLabel
     Left = 104
-    Top = 176
+    Top = 152
     Width = 78
     Height = 23
     Caption = 'Password'
@@ -54,31 +54,29 @@ object Login: TLogin
   end
   object edt1: TEdit
     Left = 224
-    Top = 80
-    Width = 313
-    Height = 41
+    Top = 88
+    Width = 321
+    Height = 49
     TabOrder = 0
-    Text = 'edt1'
   end
   object edt2: TEdit
     Left = 224
-    Top = 168
-    Width = 313
+    Top = 160
+    Width = 321
     Height = 49
     TabOrder = 1
-    Text = 'edt2'
   end
   object btn1: TButton
     Left = 144
-    Top = 264
+    Top = 232
     Width = 121
     Height = 57
     Caption = 'Masuk'
     TabOrder = 2
   end
   object btn2: TButton
-    Left = 360
-    Top = 264
+    Left = 336
+    Top = 232
     Width = 137
     Height = 57
     Caption = 'Daftar'

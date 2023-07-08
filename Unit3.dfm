@@ -1,6 +1,6 @@
 object Ortu: TOrtu
-  Left = 425
-  Top = 106
+  Left = 559
+  Top = 92
   Width = 643
   Height = 590
   Caption = 'Data Orang Tua'
@@ -27,22 +27,9 @@ object Ortu: TOrtu
     Font.Style = []
     ParentFont = False
   end
-  object lbl2: TLabel
-    Left = 48
-    Top = 40
-    Width = 75
-    Height = 14
-    Caption = ' ID Orang tua'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object lbl3: TLabel
     Left = 56
-    Top = 64
+    Top = 40
     Width = 19
     Height = 14
     Caption = 'NIK'
@@ -55,7 +42,7 @@ object Ortu: TOrtu
   end
   object Label1: TLabel
     Left = 56
-    Top = 88
+    Top = 64
     Width = 92
     Height = 14
     Caption = 'Nama Orang Tua'
@@ -68,7 +55,7 @@ object Ortu: TOrtu
   end
   object lbl5: TLabel
     Left = 56
-    Top = 112
+    Top = 88
     Width = 58
     Height = 14
     Caption = 'Pendidikan'
@@ -81,7 +68,7 @@ object Ortu: TOrtu
   end
   object lbl6: TLabel
     Left = 56
-    Top = 136
+    Top = 112
     Width = 53
     Height = 14
     Caption = 'Pekerjaan'
@@ -94,7 +81,7 @@ object Ortu: TOrtu
   end
   object lbl7: TLabel
     Left = 56
-    Top = 208
+    Top = 184
     Width = 71
     Height = 14
     Caption = 'Jenis Kelamin'
@@ -107,7 +94,7 @@ object Ortu: TOrtu
   end
   object lbl8: TLabel
     Left = 56
-    Top = 184
+    Top = 160
     Width = 37
     Height = 14
     Caption = 'Alamat'
@@ -120,7 +107,7 @@ object Ortu: TOrtu
   end
   object lbl9: TLabel
     Left = 56
-    Top = 160
+    Top = 136
     Width = 47
     Height = 14
     Caption = 'No. Telp'
@@ -133,7 +120,7 @@ object Ortu: TOrtu
   end
   object lbl10: TLabel
     Left = 56
-    Top = 256
+    Top = 232
     Width = 41
     Height = 14
     Caption = 'ID Aktif'
@@ -146,7 +133,7 @@ object Ortu: TOrtu
   end
   object lbl11: TLabel
     Left = 56
-    Top = 232
+    Top = 208
     Width = 37
     Height = 14
     Caption = 'Agama'
@@ -180,7 +167,7 @@ object Ortu: TOrtu
   end
   object btn1: TButton
     Left = 56
-    Top = 288
+    Top = 264
     Width = 75
     Height = 25
     Caption = 'Baru'
@@ -189,7 +176,7 @@ object Ortu: TOrtu
   end
   object btn3: TButton
     Left = 272
-    Top = 288
+    Top = 264
     Width = 75
     Height = 25
     Caption = 'Edit'
@@ -198,7 +185,7 @@ object Ortu: TOrtu
   end
   object btn4: TButton
     Left = 376
-    Top = 288
+    Top = 264
     Width = 75
     Height = 25
     Caption = 'Hapus'
@@ -207,7 +194,7 @@ object Ortu: TOrtu
   end
   object btn5: TButton
     Left = 480
-    Top = 288
+    Top = 264
     Width = 75
     Height = 25
     Caption = 'Batal'
@@ -216,7 +203,7 @@ object Ortu: TOrtu
   end
   object btn2: TButton
     Left = 160
-    Top = 288
+    Top = 264
     Width = 75
     Height = 25
     Caption = 'Simpan'
@@ -244,32 +231,36 @@ object Ortu: TOrtu
     Height = 21
     TabOrder = 10
   end
-  object edt7: TEdit
-    Left = 152
-    Top = 184
-    Width = 393
-    Height = 21
-    TabOrder = 11
-  end
   object edt8: TEdit
     Left = 152
     Top = 208
     Width = 393
     Height = 21
-    TabOrder = 12
+    TabOrder = 11
   end
-  object edt10: TEdit
+  object edt9: TEdit
     Left = 152
-    Top = 256
+    Top = 232
     Width = 393
     Height = 21
-    TabOrder = 13
+    TabOrder = 12
   end
-  object dbgrdortu: TDBGrid
-    Left = 48
-    Top = 320
-    Width = 545
-    Height = 217
+  object cbb1: TComboBox
+    Left = 152
+    Top = 184
+    Width = 393
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 13
+    Items.Strings = (
+      'Perempuan'
+      'Laki-laki')
+  end
+  object dbgrd1: TDBGrid
+    Left = 40
+    Top = 304
+    Width = 561
+    Height = 209
     DataSource = dsOrtu
     TabOrder = 14
     TitleFont.Charset = DEFAULT_CHARSET
@@ -277,14 +268,65 @@ object Ortu: TOrtu
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-    OnCellClick = dbgrdortuCellClick
-  end
-  object edt9: TEdit
-    Left = 152
-    Top = 232
-    Width = 393
-    Height = 21
-    TabOrder = 15
+    OnCellClick = dbgrd1CellClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Width = 20
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nik'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nama_ortu'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pendidikan'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pekerjaan'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'telp'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'alamat'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'jenis_kelamin'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'agama'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'id_active'
+        Visible = True
+      end>
   end
   object dsOrtu: TDataSource
     DataSet = ZQuery1

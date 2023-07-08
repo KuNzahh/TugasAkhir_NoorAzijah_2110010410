@@ -1,8 +1,8 @@
 object poin: Tpoin
-  Left = 431
-  Top = 135
+  Left = 642
+  Top = 129
   Width = 645
-  Height = 480
+  Height = 478
   Caption = 'Data Point'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -27,22 +27,9 @@ object poin: Tpoin
     Font.Style = []
     ParentFont = False
   end
-  object lbl2: TLabel
-    Left = 48
-    Top = 40
-    Width = 48
-    Height = 14
-    Caption = ' ID Point'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object lbl3: TLabel
     Left = 56
-    Top = 64
+    Top = 40
     Width = 65
     Height = 14
     Caption = 'Nama_Point'
@@ -55,7 +42,7 @@ object poin: Tpoin
   end
   object Label1: TLabel
     Left = 56
-    Top = 88
+    Top = 64
     Width = 33
     Height = 14
     Caption = 'Bobot'
@@ -68,7 +55,7 @@ object poin: Tpoin
   end
   object lbl5: TLabel
     Left = 56
-    Top = 112
+    Top = 88
     Width = 26
     Height = 14
     Caption = 'Jenis'
@@ -81,7 +68,7 @@ object poin: Tpoin
   end
   object Label2: TLabel
     Left = 56
-    Top = 136
+    Top = 112
     Width = 35
     Height = 14
     Caption = 'Status'
@@ -113,78 +100,75 @@ object poin: Tpoin
     Height = 21
     TabOrder = 2
   end
-  object edt4: TEdit
-    Left = 152
-    Top = 112
-    Width = 393
-    Height = 21
-    TabOrder = 3
-  end
-  object edt5: TEdit
-    Left = 152
-    Top = 136
-    Width = 393
-    Height = 21
-    TabOrder = 4
-  end
   object btn1: TButton
     Left = 48
-    Top = 168
+    Top = 144
     Width = 75
     Height = 25
     Caption = 'Baru'
-    TabOrder = 5
+    TabOrder = 3
     OnClick = btn1Click
   end
   object btn3: TButton
     Left = 264
-    Top = 168
+    Top = 144
     Width = 75
     Height = 25
     Caption = 'Edit'
-    TabOrder = 6
+    TabOrder = 4
     OnClick = btn3Click
   end
   object btn4: TButton
     Left = 368
-    Top = 168
+    Top = 144
     Width = 75
     Height = 25
     Caption = 'Hapus'
-    TabOrder = 7
+    TabOrder = 5
     OnClick = btn4Click
   end
   object btn5: TButton
     Left = 472
-    Top = 168
+    Top = 144
     Width = 75
     Height = 25
     Caption = 'Batal'
-    TabOrder = 8
+    TabOrder = 6
     OnClick = btn5Click
   end
   object btn2: TButton
     Left = 152
-    Top = 168
+    Top = 144
     Width = 75
     Height = 25
     Caption = 'Simpan'
-    TabOrder = 9
+    TabOrder = 7
     OnClick = btn2Click
   end
   object dbgrduser: TDBGrid
     Left = 48
-    Top = 200
+    Top = 176
     Width = 505
     Height = 209
     DataSource = dspoin
-    TabOrder = 10
+    TabOrder = 8
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     OnCellClick = dbgrduserCellClick
+  end
+  object cbb1: TComboBox
+    Left = 152
+    Top = 112
+    Width = 393
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 9
+    Items.Strings = (
+      'Aktif'
+      'Tidak Aktif')
   end
   object dspoin: TDataSource
     DataSet = ZQuery1

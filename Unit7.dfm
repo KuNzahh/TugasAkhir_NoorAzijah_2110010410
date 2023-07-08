@@ -27,22 +27,9 @@ object Hubungan: THubungan
     Font.Style = []
     ParentFont = False
   end
-  object lbl2: TLabel
-    Left = 48
-    Top = 40
-    Width = 76
-    Height = 14
-    Caption = ' ID Hubungan'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object lbl3: TLabel
     Left = 56
-    Top = 64
+    Top = 40
     Width = 46
     Height = 14
     Caption = 'ID Siswa'
@@ -55,7 +42,7 @@ object Hubungan: THubungan
   end
   object Label1: TLabel
     Left = 56
-    Top = 88
+    Top = 64
     Width = 41
     Height = 14
     Caption = 'ID Ortu'
@@ -68,7 +55,7 @@ object Hubungan: THubungan
   end
   object Label2: TLabel
     Left = 56
-    Top = 112
+    Top = 88
     Width = 126
     Height = 14
     Caption = 'Status Hubungan Anak'
@@ -81,7 +68,7 @@ object Hubungan: THubungan
   end
   object Label3: TLabel
     Left = 56
-    Top = 136
+    Top = 112
     Width = 63
     Height = 14
     Caption = 'Keterangan'
@@ -94,7 +81,7 @@ object Hubungan: THubungan
   end
   object Label4: TLabel
     Left = 56
-    Top = 160
+    Top = 136
     Width = 97
     Height = 14
     Caption = 'Status Orang Tua'
@@ -105,34 +92,13 @@ object Hubungan: THubungan
     Font.Style = []
     ParentFont = False
   end
-  object edt1: TEdit
-    Left = 200
-    Top = 40
-    Width = 393
-    Height = 21
-    TabOrder = 0
-  end
-  object edt2: TEdit
-    Left = 200
-    Top = 64
-    Width = 393
-    Height = 21
-    TabOrder = 1
-  end
-  object edt3: TEdit
-    Left = 200
-    Top = 88
-    Width = 393
-    Height = 21
-    TabOrder = 2
-  end
   object btn1: TButton
     Left = 64
     Top = 192
     Width = 75
     Height = 25
     Caption = 'Baru'
-    TabOrder = 3
+    TabOrder = 0
     OnClick = btn1Click
   end
   object btn3: TButton
@@ -141,7 +107,7 @@ object Hubungan: THubungan
     Width = 75
     Height = 25
     Caption = 'Edit'
-    TabOrder = 4
+    TabOrder = 1
     OnClick = btn3Click
   end
   object btn4: TButton
@@ -150,7 +116,7 @@ object Hubungan: THubungan
     Width = 75
     Height = 25
     Caption = 'Hapus'
-    TabOrder = 5
+    TabOrder = 2
     OnClick = btn4Click
   end
   object btn5: TButton
@@ -159,7 +125,7 @@ object Hubungan: THubungan
     Width = 75
     Height = 25
     Caption = 'Batal'
-    TabOrder = 6
+    TabOrder = 3
     OnClick = btn5Click
   end
   object btn2: TButton
@@ -168,29 +134,8 @@ object Hubungan: THubungan
     Width = 75
     Height = 25
     Caption = 'Simpan'
-    TabOrder = 7
+    TabOrder = 4
     OnClick = btn2Click
-  end
-  object edt4: TEdit
-    Left = 200
-    Top = 112
-    Width = 393
-    Height = 21
-    TabOrder = 8
-  end
-  object edt5: TEdit
-    Left = 200
-    Top = 136
-    Width = 393
-    Height = 21
-    TabOrder = 9
-  end
-  object edt6: TEdit
-    Left = 200
-    Top = 160
-    Width = 393
-    Height = 21
-    TabOrder = 10
   end
   object dbgrduser: TDBGrid
     Left = 56
@@ -198,13 +143,89 @@ object Hubungan: THubungan
     Width = 529
     Height = 201
     DataSource = dshubungan
-    TabOrder = 11
+    TabOrder = 5
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     OnCellClick = dbgrduserCellClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Width = 20
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'siswa_id'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ortu_id'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'status_hub_anak'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'keterangan'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'status_ortu'
+        Visible = True
+      end>
+  end
+  object edt4: TEdit
+    Left = 200
+    Top = 112
+    Width = 393
+    Height = 21
+    TabOrder = 6
+  end
+  object cbb1: TComboBox
+    Left = 200
+    Top = 88
+    Width = 393
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 7
+    Items.Strings = (
+      'Ibu'
+      'Ayah')
+  end
+  object cbb2: TComboBox
+    Left = 200
+    Top = 136
+    Width = 393
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 8
+    Items.Strings = (
+      'Hidup'
+      'Meninggal dunia')
+  end
+  object edt1: TEdit
+    Left = 200
+    Top = 40
+    Width = 393
+    Height = 21
+    TabOrder = 9
+  end
+  object edt2: TEdit
+    Left = 200
+    Top = 64
+    Width = 393
+    Height = 21
+    TabOrder = 10
   end
   object dshubungan: TDataSource
     DataSet = ZQuery1

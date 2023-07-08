@@ -1,6 +1,6 @@
 object Semester: TSemester
-  Left = 421
-  Top = 92
+  Left = 555
+  Top = 152
   Width = 635
   Height = 577
   Caption = 'Data Semester'
@@ -27,22 +27,9 @@ object Semester: TSemester
     Font.Style = []
     ParentFont = False
   end
-  object lbl2: TLabel
-    Left = 32
-    Top = 40
-    Width = 72
-    Height = 14
-    Caption = ' ID Semester'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object lbl3: TLabel
     Left = 40
-    Top = 64
+    Top = 40
     Width = 46
     Height = 14
     Caption = 'ID Siswa'
@@ -55,7 +42,7 @@ object Semester: TSemester
   end
   object Label1: TLabel
     Left = 40
-    Top = 88
+    Top = 64
     Width = 44
     Height = 14
     Caption = 'ID Point'
@@ -68,7 +55,7 @@ object Semester: TSemester
   end
   object lbl5: TLabel
     Left = 40
-    Top = 112
+    Top = 88
     Width = 38
     Height = 14
     Caption = 'ID Wali'
@@ -81,7 +68,7 @@ object Semester: TSemester
   end
   object lbl6: TLabel
     Left = 40
-    Top = 136
+    Top = 112
     Width = 74
     Height = 14
     Caption = 'ID Orang Tua'
@@ -94,7 +81,7 @@ object Semester: TSemester
   end
   object lbl7: TLabel
     Left = 40
-    Top = 208
+    Top = 184
     Width = 52
     Height = 14
     Caption = 'Semester'
@@ -107,7 +94,7 @@ object Semester: TSemester
   end
   object lbl8: TLabel
     Left = 40
-    Top = 232
+    Top = 208
     Width = 35
     Height = 14
     Caption = 'Status'
@@ -120,7 +107,7 @@ object Semester: TSemester
   end
   object lbl9: TLabel
     Left = 40
-    Top = 160
+    Top = 136
     Width = 43
     Height = 14
     Caption = 'ID Kelas'
@@ -133,7 +120,7 @@ object Semester: TSemester
   end
   object lbl11: TLabel
     Left = 40
-    Top = 256
+    Top = 232
     Width = 72
     Height = 14
     Caption = 'Tingkat Kelas'
@@ -146,7 +133,7 @@ object Semester: TSemester
   end
   object Label2: TLabel
     Left = 40
-    Top = 184
+    Top = 160
     Width = 43
     Height = 14
     Caption = 'Tanggal'
@@ -251,19 +238,12 @@ object Semester: TSemester
     Height = 21
     TabOrder = 11
   end
-  object edt8: TEdit
-    Left = 136
-    Top = 208
-    Width = 393
-    Height = 21
-    TabOrder = 12
-  end
   object edt9: TEdit
     Left = 136
     Top = 232
     Width = 393
     Height = 21
-    TabOrder = 13
+    TabOrder = 12
   end
   object dbgrdkelas: TDBGrid
     Left = 32
@@ -271,7 +251,7 @@ object Semester: TSemester
     Width = 521
     Height = 185
     DataSource = dssemster
-    TabOrder = 14
+    TabOrder = 13
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -279,16 +259,20 @@ object Semester: TSemester
     TitleFont.Style = []
     OnCellClick = dbgrdkelasCellClick
   end
-  object edt10: TEdit
+  object cbb1: TComboBox
     Left = 136
-    Top = 256
+    Top = 208
     Width = 393
     Height = 21
-    TabOrder = 15
+    ItemHeight = 13
+    TabOrder = 14
+    Items.Strings = (
+      'Aktif'
+      'Tidak Aktif')
   end
   object dssemster: TDataSource
     DataSet = ZQuery1
-    Left = 552
+    Left = 560
     Top = 88
   end
   object ZQuery1: TZQuery
