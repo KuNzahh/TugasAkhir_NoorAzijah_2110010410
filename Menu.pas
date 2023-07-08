@@ -26,6 +26,7 @@ type
     procedure DataWaliKelas1Click(Sender: TObject);
     procedure DataOrtu1Click(Sender: TObject);
     procedure DataUser1Click(Sender: TObject);
+    procedure DataHubungan1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,7 +38,7 @@ var
 
 implementation
 
-uses Unit2, Unit4, Unit1, Unit3, Unit8;
+uses Unit2, Unit4, Unit1, Unit3, Unit8, Unit7;
 
 {$R *.dfm}
 
@@ -64,6 +65,11 @@ end;
 procedure TMenuAwal.DataUser1Click(Sender: TObject);
 begin
  user.show
+end;
+
+procedure TMenuAwal.DataHubungan1Click(Sender: TObject);
+begin
+ hubungan.show
 end;
 
 end.

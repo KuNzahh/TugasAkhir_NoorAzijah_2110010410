@@ -113,7 +113,7 @@ procedure TWaliKelas.btn3Click(Sender: TObject);
 begin
   ShowMessage('DATA BERHASIL DIUPDATE!') ;
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('Update wali_kelas set nik= "'+edt2.Text+'", nama="'+edt3.Text+'", jenis_kelamin="'+edt4.Text+'", pendidikan="'+edt5.Text+'", telp="'+edt6.Text+'", matpel="'+edt7.Text+'", alamat="'+edt8.Text+'", status="'+edt9.Text+'" where kelas.id="'+edt1.Text+'"');
+  ZQuery1.SQL.Add('Update wali_kelas set nik= "'+edt2.Text+'", nama="'+edt3.Text+'", jenis_kelamin="'+edt4.Text+'", pendidikan="'+edt5.Text+'", telp="'+edt6.Text+'", matpel="'+edt7.Text+'", alamat="'+edt8.Text+'", status="'+edt9.Text+'" where wali_kelas.id="'+edt1.Text+'"');
   ZQuery1.ExecSQL;
 
   ZQuery1.SQL.Clear;
@@ -147,6 +147,7 @@ end;
 
 procedure TWaliKelas.editenabled;
 begin
+ edt1.Enabled:= True;
  edt2.Enabled:= True;
  edt3.Enabled:= True;
  edt4.Enabled:=True;

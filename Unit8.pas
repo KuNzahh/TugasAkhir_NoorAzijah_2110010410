@@ -97,7 +97,7 @@ procedure TUser.btn3Click(Sender: TObject);
 begin
  ShowMessage('DATA BERHASIL DIUPDATE!') ;
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('Update user set username= "'+edt2.Text+'", password="'+edt3.Text+'", level="'+edt4.Text+'", status="'+edt5.Text+'" where kelas.id="'+edt1.Text+'"');
+  ZQuery1.SQL.Add('Update user set username= "'+edt2.Text+'", password="'+edt3.Text+'", level="'+edt4.Text+'", status="'+edt5.Text+'" where user.id="'+edt1.Text+'"');
   ZQuery1.ExecSQL;
 
   ZQuery1.SQL.Clear;

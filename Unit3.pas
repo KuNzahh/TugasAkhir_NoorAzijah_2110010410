@@ -116,7 +116,7 @@ procedure TOrtu.btn3Click(Sender: TObject);
 begin
    ShowMessage('DATA BERHASIL DIUPDATE!') ;
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('Update ortu set nik= "'+edt2.Text+'", nama_ortu="'+edt3.Text+'", pendidikan="'+edt4.Text+'", pekerjaan="'+edt5.Text+'", telp="'+edt6.Text+'", alamat="'+edt7.Text+'", jenis_kelamin="'+edt8.Text+'", agama="'+edt9.Text+'", id_active="'+edt10.Text+'"where kelas.id="'+edt1.Text+'"');
+  ZQuery1.SQL.Add('Update ortu set nik= "'+edt2.Text+'", nama_ortu="'+edt3.Text+'", pendidikan="'+edt4.Text+'", pekerjaan="'+edt5.Text+'", telp="'+edt6.Text+'", alamat="'+edt7.Text+'", jenis_kelamin="'+edt8.Text+'", agama="'+edt9.Text+'", id_active="'+edt10.Text+'"where ortu.id="'+edt1.Text+'"');
   ZQuery1.ExecSQL;
 
   ZQuery1.SQL.Clear;

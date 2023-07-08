@@ -66,6 +66,7 @@ object MenuAwal: TMenuAwal
       end
       object DataHubungan1: TMenuItem
         Caption = 'Data Hubungan'
+        OnClick = DataHubungan1Click
       end
       object DataPoint1: TMenuItem
         Caption = 'Data Point'
