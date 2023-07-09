@@ -94,6 +94,20 @@ end;
 
 procedure TSemester.btn2Click(Sender: TObject);
 begin
+if edt1.Text ='' then
+begin
+ShowMessage('ID SISWA TIDAK BOLEH KOSONG!');
+  end else
+  if edt2.Text ='' then
+  begin
+  ShowMessage('ID POIN TIDAK BOLEH KOSONG!');
+  end else
+  if edt6.Text ='' then
+  begin
+  ShowMessage('TANGGAL TIDAK BOLEH KOSONG!');
+  end else
+
+  begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('insert into semester values(null, "'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'","'+edt6.Text+'","'+edt7.Text+'","'+cbb1.Text+'","'+edt9.Text+'")');
  ZQuery1.ExecSQL;
@@ -101,7 +115,16 @@ begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('select * from semester');
  ZQuery1.Open;
- posisiawal;
+ if (edt1.Text= '')or (edt2.Text ='')or(cbb1.Text= '')or (edt4.Text ='')or (edt4.Text ='')or (edt5.Text ='')or (edt6.Text ='')or (edt7.Text ='')or (cbb1.Text ='')or (edt9.Text ='') then
+  begin
+  ShowMessage('INPUTAN WAJIB DIISI!');
+  end else
+  if edt1.Text = ZQuery1.Fields[1].AsString then
+  begin
+  ShowMessage('DATA TIDAK ADA PERUBAHAN');
+  posisiawal;
+  end
+end
 end;
 
 procedure TSemester.btn3Click(Sender: TObject);
@@ -118,6 +141,8 @@ end;
 
 procedure TSemester.btn4Click(Sender: TObject);
 begin
+   if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)= mryes then
+  begin
    ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('delete from semester where id="'+id+'"');
    ZQuery1.ExecSQL;
@@ -125,7 +150,11 @@ begin
    ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('select*from semester');
    ZQuery1.Open;
-   posisiawal;
+   end else
+  Begin
+  ShowMessage('DATA BATAL DIHAPUS !');
+  posisiawal;
+  end
 end;
 
 procedure TSemester.btn5Click(Sender: TObject);

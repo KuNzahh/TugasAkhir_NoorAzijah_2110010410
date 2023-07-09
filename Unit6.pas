@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, StdCtrls, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset;
+  ZAbstractDataset, ZDataset, frxClass, frxDBSet;
 
 type
   Tpoin = class(TForm)
@@ -26,6 +26,9 @@ type
     dspoin: TDataSource;
     ZQuery1: TZQuery;
     cbb1: TComboBox;
+    frxDBpoin: TfrxDBDataset;
+    frxRpoin: TfrxReport;
+    btn6: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -37,6 +40,7 @@ type
     procedure editenabled;
     procedure dbgrduserCellClick(Column: TColumn);
     procedure FormCreate(Sender: TObject);
+    procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -80,6 +84,19 @@ end;
 
 procedure Tpoin.btn2Click(Sender: TObject);
 begin
+if edt1.Text ='' then
+begin
+ShowMessage('NAMA POIN TIDAK BOLEH KOSONG!');
+  end else
+  if edt2.Text ='' then
+  begin
+  ShowMessage('BOBOT TIDAK BOLEH KOSONG!');
+  end else
+  if edt3.Text ='' then
+  begin
+  ShowMessage('JENIS TIDAK BOLEH KOSONG!');
+  end else
+begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('insert into poin values(null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+id+'")');
  ZQuery1.ExecSQL;
@@ -87,7 +104,16 @@ begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('select * from poin');
  ZQuery1.Open;
- posisiawal;
+ if (edt1.Text= '')or (edt2.Text ='')or (edt3.Text ='') then
+  begin
+  ShowMessage('INPUTAN WAJIB DIISI!');
+  end else
+  if edt1.Text = ZQuery1.Fields[1].AsString then
+  begin
+  ShowMessage('DATA TIDAK ADA PERUBAHAN');
+  posisiawal;
+  end
+ end
 end;
 
 procedure Tpoin.btn3Click(Sender: TObject);
@@ -104,6 +130,8 @@ end;
 
 procedure Tpoin.btn4Click(Sender: TObject);
 begin
+  if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)= mryes then
+  begin
    ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('delete from poin where id="'+id+'"');
    ZQuery1.ExecSQL;
@@ -111,7 +139,11 @@ begin
    ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('select*from poin');
    ZQuery1.Open;
-   posisiawal;
+   end else
+  Begin
+  ShowMessage('DATA BATAL DIHAPUS !');
+  posisiawal;
+  end
 end;
 
 procedure Tpoin.btn5Click(Sender: TObject);
@@ -181,6 +213,11 @@ begin
  btn3.Enabled:=False;
  btn4.Enabled:=False;
  btn5.Enabled:=False;
+end;
+
+procedure Tpoin.btn6Click(Sender: TObject);
+begin
+ frxRpoin.ShowReport();
 end;
 
 end.

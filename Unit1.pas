@@ -100,6 +100,20 @@ end;
 
 procedure TWaliKelas.btn2Click(Sender: TObject);
 begin
+if edt1.Text ='' then
+begin
+ShowMessage('NIK TIDAK BOLEH KOSONG!');
+  end else
+  if edt2.Text ='' then
+  begin
+  ShowMessage('NAMA WALI KELAS TIDAK BOLEH KOSONG!');
+  end else
+  if edt6.Text ='' then
+  begin
+  ShowMessage('MATA PELAJARAN TIDAK BOLEH KOSONG!');
+  end else
+
+  begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('insert into wali_kelas values(null,"'+edt1.Text+'","'+edt2.Text+'","'+cbb1.Text+'","'+edt4.Text+'","'+edt5.Text+'","'+edt6.Text+'","'+edt7.Text+'","'+cbb2.Text+'")');
  ZQuery1.ExecSQL;
@@ -107,7 +121,16 @@ begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('select * from wali_kelas');
  ZQuery1.Open;
- posisiawal;
+ if (edt1.Text= '')or (edt2.Text ='')or(cbb1.Text= '')or (edt4.Text ='')or (edt4.Text ='')or (edt5.Text ='')or (edt6.Text ='')or (edt7.Text ='')or (cbb2.Text ='') then
+  begin
+  ShowMessage('INPUTAN WAJIB DIISI!');
+  end else
+  if edt1.Text = ZQuery1.Fields[1].AsString then
+  begin
+  ShowMessage('DATA TIDAK ADA PERUBAHAN');
+  posisiawal;
+  end
+end
 end;
 
 procedure TWaliKelas.btn3Click(Sender: TObject);
@@ -124,6 +147,8 @@ end;
 
 procedure TWaliKelas.btn4Click(Sender: TObject);
 begin
+   if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)= mryes then
+  begin
    ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('delete from wali_kelas where id="'+edt1.Text+'"');
    ZQuery1.ExecSQL;
@@ -131,7 +156,11 @@ begin
    ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('select*from wali_kelas');
    ZQuery1.Open;
-   posisiawal;
+   end else
+  Begin
+  ShowMessage('DATA BATAL DIHAPUS !');
+  posisiawal;
+  end
 end;
 
 procedure TWaliKelas.btn5Click(Sender: TObject);

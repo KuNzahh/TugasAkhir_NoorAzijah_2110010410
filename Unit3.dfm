@@ -1,6 +1,6 @@
 object Ortu: TOrtu
-  Left = 540
-  Top = 113
+  Left = 307
+  Top = 119
   Width = 643
   Height = 590
   Caption = 'Data Orang Tua'
@@ -253,8 +253,8 @@ object Ortu: TOrtu
     ItemHeight = 13
     TabOrder = 13
     Items.Strings = (
-      'Perempuan'
-      'Laki-laki')
+      'Laki-laki'
+      'Perempuan')
   end
   object dbgrd1: TDBGrid
     Left = 40

@@ -1,7 +1,7 @@
 object Kelas: TKelas
-  Left = 628
-  Top = 158
-  Width = 656
+  Left = 197
+  Top = 146
+  Width = 604
   Height = 480
   Caption = 'Data Kelas'
   Color = clBtnFace
@@ -16,7 +16,7 @@ object Kelas: TKelas
   TextHeight = 13
   object lbl1: TLabel
     Left = 264
-    Top = 8
+    Top = 24
     Width = 98
     Height = 25
     Caption = 'Data Kelas'
@@ -68,8 +68,8 @@ object Kelas: TKelas
     TabOrder = 1
   end
   object btn1: TButton
-    Left = 72
-    Top = 184
+    Left = 40
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'Baru'
@@ -77,8 +77,8 @@ object Kelas: TKelas
     OnClick = btn1Click
   end
   object btn3: TButton
-    Left = 248
-    Top = 184
+    Left = 216
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'Edit'
@@ -86,8 +86,8 @@ object Kelas: TKelas
     OnClick = btn3Click
   end
   object btn4: TButton
-    Left = 336
-    Top = 184
+    Left = 304
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'Hapus'
@@ -95,8 +95,8 @@ object Kelas: TKelas
     OnClick = btn4Click
   end
   object btn5: TButton
-    Left = 424
-    Top = 184
+    Left = 392
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'Batal'
@@ -104,8 +104,8 @@ object Kelas: TKelas
     OnClick = btn5Click
   end
   object dbgrdkelas: TDBGrid
-    Left = 64
-    Top = 224
+    Left = 32
+    Top = 192
     Width = 521
     Height = 185
     DataSource = dsKelas
@@ -118,8 +118,8 @@ object Kelas: TKelas
     OnCellClick = dbgrdkelasCellClick
   end
   object btn2: TButton
-    Left = 160
-    Top = 184
+    Left = 128
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'Simpan'
@@ -127,8 +127,8 @@ object Kelas: TKelas
     OnClick = btn2Click
   end
   object btn6: TButton
-    Left = 512
-    Top = 184
+    Left = 480
+    Top = 152
     Width = 75
     Height = 25
     Caption = 'Laporan'
@@ -141,20 +141,20 @@ object Kelas: TKelas
     SQL.Strings = (
       'select * from kelas')
     Params = <>
-    Left = 496
-    Top = 32
+    Left = 400
+    Top = 16
   end
   object dsKelas: TDataSource
     DataSet = ZQuery1
-    Left = 552
-    Top = 32
+    Left = 448
+    Top = 16
   end
   object frxDBKelas: TfrxDBDataset
     UserName = 'frxDBKelas'
     CloseDataSource = False
     DataSet = ZQuery1
-    Left = 584
-    Top = 80
+    Left = 488
+    Top = 16
   end
   object frxRkelas: TfrxReport
     Version = '4.0.11'
@@ -171,8 +171,8 @@ object Kelas: TKelas
       'begin'
       ''
       'end.')
-    Left = 576
-    Top = 128
+    Left = 224
+    Top = 24
     Datasets = <
       item
         DataSet = frxDBKelas

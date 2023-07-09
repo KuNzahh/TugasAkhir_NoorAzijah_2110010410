@@ -105,6 +105,20 @@ end;
 
 procedure TOrtu.btn2Click(Sender: TObject);
 begin
+if edt1.Text ='' then
+begin
+ShowMessage('NIK TIDAK BOLEH KOSONG!');
+  end else
+  if edt2.Text ='' then
+  begin
+  ShowMessage('NAMA TIDAK BOLEH KOSONG!');
+  end else
+  if edt5.Text ='' then
+  begin
+  ShowMessage('NO TELEPON TIDAK BOLEH KOSONG!');
+  end else
+
+  begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('insert into ortu values(null, "'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'","'+edt6.Text+'","'+cbb1.Text+'","'+edt8.Text+'","'+edt9.Text+'")');
  ZQuery1.ExecSQL;
@@ -112,7 +126,17 @@ begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('select * from ortu');
  ZQuery1.Open;
- posisiawal;
+
+ if (edt1.Text= '')or (edt2.Text ='')or(edt3.Text= '')or (edt4.Text ='')or (edt4.Text ='')or (edt5.Text ='')or (edt6.Text ='')or (cbb1.Text ='')or (edt8.Text ='') then
+  begin
+  ShowMessage('INPUTAN WAJIB DIISI!');
+  end else
+  if edt1.Text = ZQuery1.Fields[1].AsString then
+  begin
+  ShowMessage('DATA TIDAK ADA PERUBAHAN');
+  posisiawal;
+  end
+end
 end;
 
 procedure TOrtu.btn3Click(Sender: TObject);
@@ -129,6 +153,8 @@ end;
 
 procedure TOrtu.btn4Click(Sender: TObject);
 begin
+  if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)= mryes then
+  begin
  ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('delete from ortu where id="'+id+'"');
    ZQuery1.ExecSQL;
@@ -136,7 +162,11 @@ begin
    ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('select*from ortu');
    ZQuery1.Open;
-   posisiawal;
+   end else
+  Begin
+  ShowMessage('DATA BATAL DIHAPUS !');
+  posisiawal;
+  end
 end;
 
 procedure TOrtu.btn5Click(Sender: TObject);

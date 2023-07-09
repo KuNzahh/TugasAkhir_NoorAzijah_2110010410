@@ -111,14 +111,38 @@ end;
 
 procedure TSiswa.btn2Click(Sender: TObject);
 begin
-  ZQuery1.SQL.Clear;
- ZQuery1.SQL.Add('insert into siswa values(null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'","'+edt6.Text+'","'+cbb1.Text+'","'+edt8.Text+'","'+edt9.Text+'","'+edt10.Text+'","'+cbb2.text+'")');
- ZQuery1.ExecSQL;
+if edt3.Text ='' then
+begin
+ShowMessage('NAMA SISWA TIDAK BOLEH KOSONG!');
+  end else
+  if edt1.Text ='' then
+  begin
+  ShowMessage('NIS TIDAK BOLEH KOSONG!');
+  end else
+  if edt2.Text ='' then
+  begin
+  ShowMessage('NISN TIDAK BOLEH KOSONG!');
+  end else
 
- ZQuery1.SQL.Clear;
- ZQuery1.SQL.Add('select * from siswa');
- ZQuery1.Open;
- posisiawal;
+  begin
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('insert into siswa values(null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'","'+edt6.Text+'","'+cbb1.Text+'","'+edt8.Text+'","'+edt9.Text+'","'+edt10.Text+'","'+cbb2.text+'")');
+  ZQuery1.ExecSQL;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('select * from siswa');
+  ZQuery1.Open;
+
+ if (edt1.Text= '')or (edt2.Text ='')or(edt3.Text= '')or (edt4.Text ='')or (edt4.Text ='')or (edt5.Text ='')or (edt6.Text ='')or (cbb1.Text ='')or (edt8.Text ='')or (edt9.Text ='')or (edt10.Text ='')or (cbb2.Text ='') then
+  begin
+  ShowMessage('INPUTAN WAJIB DIISI!');
+  end else
+  if edt1.Text = ZQuery1.Fields[1].AsString then
+  begin
+  ShowMessage('DATA TIDAK ADA PERUBAHAN');
+  posisiawal;
+  end
+end
 end;
 
 procedure TSiswa.btn3Click(Sender: TObject);

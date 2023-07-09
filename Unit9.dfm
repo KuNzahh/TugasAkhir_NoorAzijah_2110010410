@@ -1,6 +1,6 @@
 object Login: TLogin
-  Left = 402
-  Top = 188
+  Left = 323
+  Top = 172
   Width = 672
   Height = 397
   Caption = 'Login'
@@ -56,14 +56,14 @@ object Login: TLogin
     Left = 224
     Top = 88
     Width = 329
-    Height = 41
+    Height = 49
     TabOrder = 0
   end
   object edt2: TEdit
     Left = 224
     Top = 152
     Width = 329
-    Height = 41
+    Height = 49
     TabOrder = 1
   end
   object btn1: TButton
@@ -73,6 +73,7 @@ object Login: TLogin
     Height = 57
     Caption = 'Masuk'
     TabOrder = 2
+    OnClick = btn1Click
   end
   object btn2: TButton
     Left = 336
@@ -81,5 +82,18 @@ object Login: TLogin
     Height = 57
     Caption = 'Daftar'
     TabOrder = 3
+  end
+  object ZQuery1: TZQuery
+    Connection = MenuAwal.ZConnection1
+    SQL.Strings = (
+      'select * from user')
+    Params = <>
+    Left = 568
+    Top = 32
+  end
+  object dsuser: TDataSource
+    DataSet = ZQuery1
+    Left = 576
+    Top = 104
   end
 end

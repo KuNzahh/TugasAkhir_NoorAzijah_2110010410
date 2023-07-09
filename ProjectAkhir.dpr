@@ -17,6 +17,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.CreateForm(TLogin, Login);
   Application.CreateForm(TMenuAwal, MenuAwal);
   Application.CreateForm(TKelas, Kelas);
   Application.CreateForm(TOrtu, Ortu);
@@ -26,6 +27,5 @@ begin
   Application.CreateForm(Tpoin, poin);
   Application.CreateForm(THubungan, Hubungan);
   Application.CreateForm(TUser, User);
-  Application.CreateForm(TLogin, Login);
   Application.Run;
 end.

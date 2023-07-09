@@ -89,6 +89,19 @@ end;
 
 procedure THubungan.btn2Click(Sender: TObject);
 begin
+if edt1.Text ='' then
+begin
+ShowMessage('ID SISWA TIDAK BOLEH KOSONG!');
+  end else
+  if edt2.Text ='' then
+  begin
+  ShowMessage('ID ORTU TIDAK BOLEH KOSONG!');
+  end else
+  if cbb1.Text ='' then
+  begin
+  ShowMessage('STATUS HUBUNGAN TIDAK BOLEH KOSONG!');
+  end else
+begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('insert into hubungan values(null, "'+edt1.Text+'","'+edt2.Text+'","'+cbb1.Text+'","'+edt4.Text+'","'+cbb2.Text+'")');
  ZQuery1.ExecSQL;
@@ -96,7 +109,16 @@ begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('select * from hubungan');
  ZQuery1.Open;
- posisiawal;
+ if (edt1.Text= '')or (edt2.Text ='')or(cbb1.Text= '')or (edt4.Text ='')or (edt4.Text ='')or (cbb2.Text ='') then
+  begin
+  ShowMessage('INPUTAN WAJIB DIISI!');
+  end else
+  if edt1.Text = ZQuery1.Fields[1].AsString then
+  begin
+  ShowMessage('DATA TIDAK ADA PERUBAHAN');
+  posisiawal;
+  end
+end
 end;
 
 procedure THubungan.btn3Click(Sender: TObject);
@@ -113,6 +135,8 @@ end;
 
 procedure THubungan.btn4Click(Sender: TObject);
 begin
+  if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)= mryes then
+  begin
    ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('delete from hubungan where id="'+id+'"');
    ZQuery1.ExecSQL;
@@ -120,7 +144,11 @@ begin
    ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('select*from hubungan');
    ZQuery1.Open;
-   posisiawal;
+   end else
+  Begin
+  ShowMessage('DATA BATAL DIHAPUS !');
+  posisiawal;
+  end
 end;
 
 procedure THubungan.btn5Click(Sender: TObject);

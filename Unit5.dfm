@@ -1,6 +1,6 @@
 object Semester: TSemester
-  Left = 361
-  Top = 113
+  Left = 268
+  Top = 108
   Width = 635
   Height = 577
   Caption = 'Data Semester'

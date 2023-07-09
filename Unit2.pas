@@ -75,6 +75,15 @@ end;
 
 procedure TKelas.btn2Click(Sender: TObject);
 begin
+if edt1.Text ='' then
+begin
+ShowMessage('NAMA KELAS TIDAK BOLEH KOSONG!');
+  end else
+  if edt2.Text ='' then
+  begin
+  ShowMessage('JURUSAN TIDAK BOLEH KOSONG!');
+  end else
+begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('insert into kelas values(null,"'+edt1.Text+'","'+edt2.Text+'")');
  ZQuery1.ExecSQL;
@@ -82,8 +91,17 @@ begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add('select * from kelas');
  ZQuery1.Open;
- posisiawal;
- end;
+  if (edt1.Text= '')or (edt2.Text ='') then
+  begin
+  ShowMessage('INPUTAN WAJIB DIISI!');
+  end else
+  if edt1.Text = ZQuery1.Fields[1].AsString then
+  begin
+  ShowMessage('DATA TIDAK ADA PERUBAHAN');
+  posisiawal;
+  end
+ end
+end;
 
 
 
@@ -119,6 +137,8 @@ end;
 
 procedure TKelas.btn4Click(Sender: TObject);
 begin
+   if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)= mryes then
+  begin
    ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('delete from kelas where id="'+edt1.Text+'"');
    ZQuery1.ExecSQL;
@@ -126,6 +146,11 @@ begin
    ZQuery1.SQL.Clear;
    ZQuery1.SQL.Add('select*from kelas');
    ZQuery1.Open;
+   end else
+  Begin
+  ShowMessage('DATA BATAL DIHAPUS !');
+  posisiawal;
+  end
 end;
 
 procedure TKelas.btn5Click(Sender: TObject);
