@@ -1,9 +1,9 @@
-object Siswa: TSiswa
-  Left = 494
-  Top = 57
-  Width = 675
-  Height = 607
-  Caption = 'Data Siswa'
+object Ortu: TOrtu
+  Left = 307
+  Top = 119
+  Width = 643
+  Height = 590
+  Caption = 'Data Orang Tua'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,11 +15,11 @@ object Siswa: TSiswa
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
-    Left = 264
+    Left = 256
     Top = 8
-    Width = 92
+    Width = 135
     Height = 23
-    Caption = 'Data Siswa'
+    Caption = 'Data Orang Tua'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -32,20 +32,7 @@ object Siswa: TSiswa
     Top = 40
     Width = 19
     Height = 14
-    Caption = 'NIS'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object lbl4: TLabel
-    Left = 56
-    Top = 64
-    Width = 27
-    Height = 14
-    Caption = 'NISN'
+    Caption = 'NIK'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -55,10 +42,10 @@ object Siswa: TSiswa
   end
   object Label1: TLabel
     Left = 56
-    Top = 88
-    Width = 64
+    Top = 64
+    Width = 92
     Height = 14
-    Caption = 'Nama Siswa'
+    Caption = 'Nama Orang Tua'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -68,10 +55,10 @@ object Siswa: TSiswa
   end
   object lbl5: TLabel
     Left = 56
-    Top = 112
-    Width = 19
+    Top = 88
+    Width = 58
     Height = 14
-    Caption = 'NIK'
+    Caption = 'Pendidikan'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -81,23 +68,10 @@ object Siswa: TSiswa
   end
   object lbl6: TLabel
     Left = 56
-    Top = 136
-    Width = 72
+    Top = 112
+    Width = 53
     Height = 14
-    Caption = 'Tempat Lahir'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label2: TLabel
-    Left = 336
-    Top = 136
-    Width = 72
-    Height = 14
-    Caption = 'Tanggal Lahir'
+    Caption = 'Pekerjaan'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -107,7 +81,7 @@ object Siswa: TSiswa
   end
   object lbl7: TLabel
     Left = 56
-    Top = 160
+    Top = 184
     Width = 71
     Height = 14
     Caption = 'Jenis Kelamin'
@@ -120,7 +94,7 @@ object Siswa: TSiswa
   end
   object lbl8: TLabel
     Left = 56
-    Top = 184
+    Top = 160
     Width = 37
     Height = 14
     Caption = 'Alamat'
@@ -133,7 +107,7 @@ object Siswa: TSiswa
   end
   object lbl9: TLabel
     Left = 56
-    Top = 208
+    Top = 136
     Width = 47
     Height = 14
     Caption = 'No. Telp'
@@ -145,11 +119,11 @@ object Siswa: TSiswa
     ParentFont = False
   end
   object lbl10: TLabel
-    Left = 336
-    Top = 208
-    Width = 38
+    Left = 56
+    Top = 232
+    Width = 41
     Height = 14
-    Caption = 'No. Hp'
+    Caption = 'ID Aktif'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -159,10 +133,10 @@ object Siswa: TSiswa
   end
   object lbl11: TLabel
     Left = 56
-    Top = 232
-    Width = 35
+    Top = 208
+    Width = 37
     Height = 14
-    Caption = 'Status'
+    Caption = 'Agama'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -192,7 +166,7 @@ object Siswa: TSiswa
     TabOrder = 2
   end
   object btn1: TButton
-    Left = 56
+    Left = 24
     Top = 264
     Width = 75
     Height = 25
@@ -201,7 +175,7 @@ object Siswa: TSiswa
     OnClick = btn1Click
   end
   object btn3: TButton
-    Left = 248
+    Left = 216
     Top = 264
     Width = 75
     Height = 25
@@ -210,7 +184,7 @@ object Siswa: TSiswa
     OnClick = btn3Click
   end
   object btn4: TButton
-    Left = 344
+    Left = 312
     Top = 264
     Width = 75
     Height = 25
@@ -219,7 +193,7 @@ object Siswa: TSiswa
     OnClick = btn4Click
   end
   object btn5: TButton
-    Left = 440
+    Left = 408
     Top = 264
     Width = 75
     Height = 25
@@ -228,7 +202,7 @@ object Siswa: TSiswa
     OnClick = btn5Click
   end
   object btn2: TButton
-    Left = 152
+    Left = 120
     Top = 264
     Width = 75
     Height = 25
@@ -246,37 +220,55 @@ object Siswa: TSiswa
   object edt5: TEdit
     Left = 152
     Top = 136
-    Width = 169
+    Width = 393
     Height = 21
     TabOrder = 9
   end
-  object edt9: TEdit
+  object edt6: TEdit
     Left = 152
-    Top = 208
-    Width = 169
+    Top = 160
+    Width = 393
     Height = 21
     TabOrder = 10
   end
-  object edt10: TEdit
-    Left = 384
+  object edt8: TEdit
+    Left = 152
     Top = 208
-    Width = 161
+    Width = 393
     Height = 21
     TabOrder = 11
   end
-  object dbgrdsiswa: TDBGrid
-    Left = 52
-    Top = 304
-    Width = 557
-    Height = 200
-    DataSource = dsSiswa
+  object edt9: TEdit
+    Left = 152
+    Top = 232
+    Width = 393
+    Height = 21
     TabOrder = 12
+  end
+  object cbb1: TComboBox
+    Left = 152
+    Top = 184
+    Width = 393
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 13
+    Items.Strings = (
+      'Laki-laki'
+      'Perempuan')
+  end
+  object dbgrd1: TDBGrid
+    Left = 40
+    Top = 304
+    Width = 561
+    Height = 209
+    DataSource = dsOrtu
+    TabOrder = 14
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-    OnCellClick = dbgrdsiswaCellClick
+    OnCellClick = dbgrd1CellClick
     Columns = <
       item
         Expanded = False
@@ -286,36 +278,38 @@ object Siswa: TSiswa
       end
       item
         Expanded = False
-        FieldName = 'nis'
-        Width = 30
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'nisn'
-        Width = 30
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'nama_siswa'
-        Width = 100
-        Visible = True
-      end
-      item
-        Expanded = False
         FieldName = 'nik'
+        Width = 50
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'tmpt_lahir'
-        Width = 100
+        FieldName = 'nama_ortu'
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'tgl_lahir'
+        FieldName = 'pendidikan'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pekerjaan'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'telp'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'alamat'
+        Width = 80
         Visible = True
       end
       item
@@ -325,93 +319,46 @@ object Siswa: TSiswa
       end
       item
         Expanded = False
-        FieldName = 'alamat'
+        FieldName = 'agama'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'telp'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'hp'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'status'
+        FieldName = 'id_active'
         Visible = True
       end>
   end
-  object edt8: TEdit
-    Left = 152
-    Top = 184
-    Width = 393
-    Height = 21
-    TabOrder = 13
-  end
-  object cbb1: TComboBox
-    Left = 152
-    Top = 160
-    Width = 393
-    Height = 21
-    ItemHeight = 13
-    TabOrder = 14
-    Items.Strings = (
-      'Perempuan'
-      'Laki-laki')
-  end
-  object cbb2: TComboBox
-    Left = 152
-    Top = 232
-    Width = 393
-    Height = 21
-    ItemHeight = 13
-    TabOrder = 15
-    Items.Strings = (
-      'Aktif'
-      'Alumni'
-      'Dikeluarkan')
-  end
-  object edt6: TEdit
-    Left = 416
-    Top = 136
-    Width = 129
-    Height = 21
-    TabOrder = 16
-  end
   object btn6: TButton
-    Left = 528
+    Left = 496
     Top = 264
     Width = 75
     Height = 25
     Caption = 'Laporan'
-    TabOrder = 17
+    TabOrder = 15
     OnClick = btn6Click
+  end
+  object dsOrtu: TDataSource
+    DataSet = ZQuery1
+    Left = 576
+    Top = 72
   end
   object ZQuery1: TZQuery
     Connection = MenuAwal.ZConnection1
     Active = True
     SQL.Strings = (
-      'select * from siswa')
+      'select * from ortu')
     Params = <>
-    Left = 560
-    Top = 8
+    Left = 568
+    Top = 16
   end
-  object dsSiswa: TDataSource
-    DataSet = ZQuery1
-    Left = 600
-    Top = 64
-  end
-  object frxDBsiswa: TfrxDBDataset
-    UserName = 'frxDBsiswa'
+  object frxDBortu: TfrxDBDataset
+    UserName = 'frxDBortu'
     CloseDataSource = False
     DataSet = ZQuery1
-    Left = 592
-    Top = 128
+    Left = 584
+    Top = 136
   end
-  object frxRsiswa: TfrxReport
+  object frxRortu: TfrxReport
     Version = '4.0.11'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
@@ -426,12 +373,12 @@ object Siswa: TSiswa
       'begin'
       ''
       'end.')
-    Left = 592
+    Left = 576
     Top = 192
     Datasets = <
       item
-        DataSet = frxDBsiswa
-        DataSetName = 'frxDBsiswa'
+        DataSet = frxDBortu
+        DataSetName = 'frxDBortu'
       end>
     Variables = <>
     Style = <>
@@ -453,63 +400,9 @@ object Siswa: TSiswa
         Top = 64.252010000000000000
         Width = 793.701300000000000000
         object Memo1: TfrxMemoView
-          Left = 7.559060000000000000
+          Left = 18.897650000000000000
           Top = 3.779530000000000000
           Width = 41.574830000000000000
-          Height = 34.015770000000000000
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'NIS')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo2: TfrxMemoView
-          Left = 49.133890000000000000
-          Top = 3.779530000000000000
-          Width = 56.692950000000000000
-          Height = 34.015770000000000000
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'NISN')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo3: TfrxMemoView
-          Left = 105.826840000000000000
-          Top = 3.779530000000000000
-          Width = 120.944960000000000000
-          Height = 34.015770000000000000
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'NAMA SISWA')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo4: TfrxMemoView
-          Left = 226.771800000000000000
-          Top = 3.779530000000000000
-          Width = 71.811070000000000000
           Height = 34.015770000000000000
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
@@ -524,10 +417,10 @@ object Siswa: TSiswa
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo5: TfrxMemoView
-          Left = 298.582870000000000000
+        object Memo3: TfrxMemoView
+          Left = 60.472480000000000000
           Top = 3.779530000000000000
-          Width = 79.370130000000000000
+          Width = 120.944960000000000000
           Height = 34.015770000000000000
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
@@ -538,14 +431,14 @@ object Siswa: TSiswa
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'TEMPAT LAHIR')
+            'NAMA ')
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo6: TfrxMemoView
-          Left = 377.953000000000000000
+        object Memo4: TfrxMemoView
+          Left = 309.921460000000000000
           Top = 3.779530000000000000
-          Width = 79.370130000000000000
+          Width = 98.267780000000000000
           Height = 34.015770000000000000
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
@@ -556,12 +449,30 @@ object Siswa: TSiswa
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'TANGGAL LAHIR')
+            'PEKERJAAN')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo5: TfrxMemoView
+          Left = 181.417440000000000000
+          Top = 3.779530000000000000
+          Width = 128.504020000000000000
+          Height = 34.015770000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'PENDIDIKAN')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo7: TfrxMemoView
-          Left = 457.323130000000000000
+          Left = 548.031850000000000000
           Top = 3.779530000000000000
           Width = 79.370130000000000000
           Height = 34.015770000000000000
@@ -579,7 +490,7 @@ object Siswa: TSiswa
           VAlign = vaCenter
         end
         object Memo8: TfrxMemoView
-          Left = 536.693260000000000000
+          Left = 461.102660000000000000
           Top = 3.779530000000000000
           Width = 86.929190000000000000
           Height = 34.015770000000000000
@@ -597,7 +508,7 @@ object Siswa: TSiswa
           VAlign = vaCenter
         end
         object Memo9: TfrxMemoView
-          Left = 623.622450000000000000
+          Left = 408.189240000000000000
           Top = 3.779530000000000000
           Width = 52.913420000000000000
           Height = 34.015770000000000000
@@ -614,26 +525,8 @@ object Siswa: TSiswa
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo10: TfrxMemoView
-          Left = 676.535870000000000000
-          Top = 3.779530000000000000
-          Width = 52.913420000000000000
-          Height = 34.015770000000000000
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'NO HP')
-          ParentFont = False
-          VAlign = vaCenter
-        end
         object Memo11: TfrxMemoView
-          Left = 729.449290000000000000
+          Left = 627.401980000000000000
           Top = 3.779530000000000000
           Width = 52.913420000000000000
           Height = 34.015770000000000000
@@ -646,7 +539,25 @@ object Siswa: TSiswa
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'STATUS')
+            'AGAMA')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo17: TfrxMemoView
+          Left = 680.315400000000000000
+          Top = 3.779530000000000000
+          Width = 52.913420000000000000
+          Height = 34.015770000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'ID AKTIF')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -655,226 +566,186 @@ object Siswa: TSiswa
         Height = 34.015770000000000000
         Top = 162.519790000000000000
         Width = 793.701300000000000000
-        DataSet = frxDBsiswa
-        DataSetName = 'frxDBsiswa'
+        DataSet = frxDBortu
+        DataSetName = 'frxDBortu'
         RowCount = 0
-        object Memo12: TfrxMemoView
-          Left = 7.559060000000000000
+        object Memo2: TfrxMemoView
+          Left = 18.897650000000000000
           Width = 41.574830000000000000
           Height = 34.015770000000000000
-          DataField = 'nis'
-          DataSet = frxDBsiswa
-          DataSetName = 'frxDBsiswa'
+          DataField = 'nik'
+          DataSet = frxDBortu
+          DataSetName = 'frxDBortu'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBsiswa."nis"]')
+            '[frxDBortu."nik"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo6: TfrxMemoView
+          Left = 60.472480000000000000
+          Width = 120.944960000000000000
+          Height = 34.015770000000000000
+          DataField = 'nama_ortu'
+          DataSet = frxDBortu
+          DataSetName = 'frxDBortu'
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBortu."nama_ortu"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo10: TfrxMemoView
+          Left = 309.921460000000000000
+          Width = 98.267780000000000000
+          Height = 34.015770000000000000
+          DataField = 'pekerjaan'
+          DataSet = frxDBortu
+          DataSetName = 'frxDBortu'
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBortu."pekerjaan"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo12: TfrxMemoView
+          Left = 181.417440000000000000
+          Width = 128.504020000000000000
+          Height = 34.015770000000000000
+          DataField = 'pendidikan'
+          DataSet = frxDBortu
+          DataSetName = 'frxDBortu'
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBortu."pendidikan"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo13: TfrxMemoView
-          Left = 49.133890000000000000
-          Width = 56.692950000000000000
+          Left = 548.031850000000000000
+          Width = 79.370130000000000000
           Height = 34.015770000000000000
-          DataField = 'nisn'
-          DataSet = frxDBsiswa
-          DataSetName = 'frxDBsiswa'
+          DataField = 'jenis_kelamin'
+          DataSet = frxDBortu
+          DataSetName = 'frxDBortu'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBsiswa."nisn"]')
+            '[frxDBortu."jenis_kelamin"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo14: TfrxMemoView
-          Left = 105.826840000000000000
-          Width = 120.944960000000000000
+          Left = 461.102660000000000000
+          Width = 86.929190000000000000
           Height = 34.015770000000000000
-          DataField = 'nama_siswa'
-          DataSet = frxDBsiswa
-          DataSetName = 'frxDBsiswa'
+          DataField = 'alamat'
+          DataSet = frxDBortu
+          DataSetName = 'frxDBortu'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBsiswa."nama_siswa"]')
+            '[frxDBortu."alamat"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo15: TfrxMemoView
-          Left = 226.771800000000000000
-          Width = 71.811070000000000000
+          Left = 408.189240000000000000
+          Width = 52.913420000000000000
           Height = 34.015770000000000000
-          DataField = 'nik'
-          DataSet = frxDBsiswa
-          DataSetName = 'frxDBsiswa'
+          DataField = 'telp'
+          DataSet = frxDBortu
+          DataSetName = 'frxDBortu'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBsiswa."nik"]')
+            '[frxDBortu."telp"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo16: TfrxMemoView
-          Left = 298.582870000000000000
-          Width = 79.370130000000000000
+          Left = 627.401980000000000000
+          Width = 52.913420000000000000
           Height = 34.015770000000000000
-          DataField = 'tmpt_lahir'
-          DataSet = frxDBsiswa
-          DataSetName = 'frxDBsiswa'
+          DataField = 'agama'
+          DataSet = frxDBortu
+          DataSetName = 'frxDBortu'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBsiswa."tmpt_lahir"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo17: TfrxMemoView
-          Left = 377.953000000000000000
-          Width = 79.370130000000000000
-          Height = 34.015770000000000000
-          DataField = 'tgl_lahir'
-          DataSet = frxDBsiswa
-          DataSetName = 'frxDBsiswa'
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBsiswa."tgl_lahir"]')
+            '[frxDBortu."agama"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo18: TfrxMemoView
-          Left = 457.323130000000000000
-          Width = 79.370130000000000000
-          Height = 34.015770000000000000
-          DataField = 'jenis_kelamin'
-          DataSet = frxDBsiswa
-          DataSetName = 'frxDBsiswa'
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBsiswa."jenis_kelamin"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo19: TfrxMemoView
-          Left = 536.693260000000000000
-          Width = 86.929190000000000000
-          Height = 34.015770000000000000
-          DataField = 'alamat'
-          DataSet = frxDBsiswa
-          DataSetName = 'frxDBsiswa'
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBsiswa."alamat"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo20: TfrxMemoView
-          Left = 623.622450000000000000
+          Left = 680.315400000000000000
           Width = 52.913420000000000000
           Height = 34.015770000000000000
-          DataField = 'telp'
-          DataSet = frxDBsiswa
-          DataSetName = 'frxDBsiswa'
+          DataField = 'id_active'
+          DataSet = frxDBortu
+          DataSetName = 'frxDBortu'
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -11
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBsiswa."telp"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo21: TfrxMemoView
-          Left = 676.535870000000000000
-          Width = 52.913420000000000000
-          Height = 34.015770000000000000
-          DataField = 'hp'
-          DataSet = frxDBsiswa
-          DataSetName = 'frxDBsiswa'
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBsiswa."hp"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo22: TfrxMemoView
-          Left = 729.449290000000000000
-          Width = 52.913420000000000000
-          Height = 34.015770000000000000
-          DataField = 'status'
-          DataSet = frxDBsiswa
-          DataSetName = 'frxDBsiswa'
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBsiswa."status"]')
+            '[frxDBortu."id_active"]')
           ParentFont = False
           VAlign = vaCenter
         end

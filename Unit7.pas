@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, StdCtrls, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset;
+  ZAbstractDataset, ZDataset, frxClass, frxDBSet;
 
 type
   THubungan = class(TForm)
@@ -28,6 +28,9 @@ type
     cbb2: TComboBox;
     edt1: TEdit;
     edt2: TEdit;
+    frxDBhubungan: TfrxDBDataset;
+    frxRhubungan: TfrxReport;
+    btn6: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -39,6 +42,7 @@ type
     procedure editclear;
     procedure dbgrduserCellClick(Column: TColumn);
     procedure FormCreate(Sender: TObject);
+    procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -193,6 +197,11 @@ begin
  btn3.Enabled:=False;
  btn4.Enabled:=False;
  btn5.Enabled:=False;
+end;
+
+procedure THubungan.btn6Click(Sender: TObject);
+begin
+ frxRhubungan.ShowReport();
 end;
 
 end.

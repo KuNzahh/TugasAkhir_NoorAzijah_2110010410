@@ -1,4 +1,4 @@
-unit Unit8;
+unit Unit6;
 
 interface
 
@@ -8,26 +8,26 @@ uses
   ZAbstractDataset, ZDataset, frxClass, frxDBSet;
 
 type
-  TUser = class(TForm)
+  Tpoin = class(TForm)
     lbl1: TLabel;
     lbl3: TLabel;
     Label1: TLabel;
+    lbl5: TLabel;
     edt1: TEdit;
     edt2: TEdit;
     edt3: TEdit;
+    Label2: TLabel;
     btn1: TButton;
     btn3: TButton;
     btn4: TButton;
     btn5: TButton;
     btn2: TButton;
     dbgrduser: TDBGrid;
-    Label2: TLabel;
-    Label3: TLabel;
-    dsuser: TDataSource;
+    dspoin: TDataSource;
     ZQuery1: TZQuery;
     cbb1: TComboBox;
-    frxDBuser: TfrxDBDataset;
-    frxRuser: TfrxReport;
+    frxDBpoin: TfrxDBDataset;
+    frxRpoin: TfrxReport;
     btn6: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
@@ -38,8 +38,8 @@ type
     procedure bersih;
     procedure editclear;
     procedure editenabled;
-    procedure FormCreate(Sender: TObject);
     procedure dbgrduserCellClick(Column: TColumn);
+    procedure FormCreate(Sender: TObject);
     procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
@@ -48,8 +48,8 @@ type
   end;
 
 var
-  User: TUser;
-  id : String;
+  poin: Tpoin;
+  id : string;
 
 implementation
 
@@ -58,7 +58,7 @@ uses
 
 {$R *.dfm}
 
-procedure TUser.bersih;
+procedure Tpoin.bersih;
 begin
  edt1.Clear;
  edt2.Clear;
@@ -66,9 +66,9 @@ begin
  cbb1.Clear;
 end;
 
-procedure TUser.btn1Click(Sender: TObject);
+procedure Tpoin.btn1Click(Sender: TObject);
 begin
-  edt1.Clear;
+ edt1.Clear;
  editenabled;
 
  edt1.Enabled:= True;
@@ -82,54 +82,54 @@ begin
  btn5.Enabled:=True;
 end;
 
-procedure TUser.btn2Click(Sender: TObject);
+procedure Tpoin.btn2Click(Sender: TObject);
 begin
  ZQuery1.SQL.Clear;
- ZQuery1.SQL.Add('insert into user values(null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+cbb1.Text+'")');
+ ZQuery1.SQL.Add('insert into poin values(null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+id+'")');
  ZQuery1.ExecSQL;
 
  ZQuery1.SQL.Clear;
- ZQuery1.SQL.Add('select * from user');
+ ZQuery1.SQL.Add('select * from poin');
  ZQuery1.Open;
  posisiawal;
 end;
 
-procedure TUser.btn3Click(Sender: TObject);
+procedure Tpoin.btn3Click(Sender: TObject);
 begin
- ShowMessage('DATA BERHASIL DIUPDATE!') ;
+  ShowMessage('DATA BERHASIL DIUPDATE!') ;
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('Update user set username= "'+edt1.Text+'", password="'+edt2.Text+'", level="'+edt3.Text+'", status="'+cbb1.Text+'" where user.id="'+edt1.Text+'"');
+  ZQuery1.SQL.Add('Update poin set nama_poin= "'+edt1.Text+'", bobot="'+edt2.Text+'", jenis="'+edt3.Text+'", status="'+cbb1.Text+'" where poin.id="'+id+'"');
   ZQuery1.ExecSQL;
 
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('select * from user');
+  ZQuery1.SQL.Add('select * from poin');
   ZQuery1.Open;
 end;
 
-procedure TUser.btn4Click(Sender: TObject);
+procedure Tpoin.btn4Click(Sender: TObject);
 begin
- ZQuery1.SQL.Clear;
-   ZQuery1.SQL.Add('delete from user where id="'+id+'"');
+   ZQuery1.SQL.Clear;
+   ZQuery1.SQL.Add('delete from poin where id="'+id+'"');
    ZQuery1.ExecSQL;
 
    ZQuery1.SQL.Clear;
-   ZQuery1.SQL.Add('select*from user');
+   ZQuery1.SQL.Add('select*from poin');
    ZQuery1.Open;
    posisiawal;
 end;
 
-procedure TUser.btn5Click(Sender: TObject);
+procedure Tpoin.btn5Click(Sender: TObject);
 begin
- posisiawal;
+   posisiawal;
 end;
 
-procedure TUser.editclear;
+procedure Tpoin.editclear;
 begin
  edt1.Text:= ''; edt2.Text:= ''; edt3.Text:= '';
  cbb1.Text:= '';
 end;
 
-procedure TUser.editenabled;
+procedure Tpoin.editenabled;
 begin
  edt1.Enabled:= True;
  edt2.Enabled:= True;
@@ -137,9 +137,9 @@ begin
  cbb1.Enabled:=True;
 end;
 
-procedure TUser.posisiawal;
+procedure Tpoin.posisiawal;
 begin
-  bersih;
+ bersih;
  btn1.Enabled:=True;
  btn2.Enabled:=False;
  btn3.Enabled:=False;
@@ -151,7 +151,26 @@ begin
  cbb1.Enabled:=False;
 end;
 
-procedure TUser.FormCreate(Sender: TObject);
+procedure Tpoin.dbgrduserCellClick(Column: TColumn);
+begin
+  id:= ZQuery1.Fields[0].AsString;
+  edt1.Text:=ZQuery1.FieldList[1].AsString;
+  edt2.Text:=ZQuery1.FieldList[2].AsString;
+  edt3.Text:=ZQuery1.FieldList[3].AsString;
+
+  edt1.Enabled:= True;
+  edt2.Enabled:= True;
+  edt3.Enabled:= True;
+  cbb1.Enabled:=True;
+
+  btn1.Enabled:= false;
+  btn2.Enabled:= False;
+  btn3.Enabled:= True;
+  btn4.Enabled:= True;
+  btn5.Enabled:= True;
+end;
+
+procedure Tpoin.FormCreate(Sender: TObject);
 begin
  edt1.Text:= ''; edt2.Text:= ''; edt3.Text:= '';
  cbb1.Text:= '';
@@ -168,30 +187,9 @@ begin
  btn5.Enabled:=False;
 end;
 
-procedure TUser.dbgrduserCellClick(Column: TColumn);
+procedure Tpoin.btn6Click(Sender: TObject);
 begin
-  id:= ZQuery1.Fields[0].AsString;
-  edt1.Text:=ZQuery1.FieldList[1].AsString;
-  edt2.Text:=ZQuery1.FieldList[2].AsString;
-  edt3.Text:=ZQuery1.FieldList[3].AsString;
-  cbb1.Text:=ZQuery1.FieldList[4].AsString;
-
-
-  edt1.Enabled:= True;
-  edt2.Enabled:= True;
-  edt3.Enabled:= True;
-  cbb1.Enabled:=True;
-
-  btn1.Enabled:= false;
-  btn2.Enabled:= False;
-  btn3.Enabled:= True;
-  btn4.Enabled:= True;
-  btn5.Enabled:= True;
-end;
-
-procedure TUser.btn6Click(Sender: TObject);
-begin
- frxRuser.ShowReport();
+ frxRpoin.ShowReport();
 end;
 
 end.

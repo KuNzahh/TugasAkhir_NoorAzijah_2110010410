@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset, Grids,
-  DBGrids, StdCtrls;
+  DBGrids, StdCtrls, frxClass, frxDBSet;
 
 type
   TKelas = class(TForm)
@@ -22,6 +22,9 @@ type
     ZQuery1: TZQuery;
     dsKelas: TDataSource;
     btn2: TButton;
+    frxDBKelas: TfrxDBDataset;
+    frxRkelas: TfrxReport;
+    btn6: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure dbgrdkelasCellClick(Column: TColumn);
@@ -33,6 +36,7 @@ type
     procedure editclear;
     procedure editenabled;
     procedure FormCreate(Sender: TObject);
+    procedure btn6Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -174,6 +178,11 @@ procedure TKelas.editenabled;
 begin
  edt1.Enabled:= True;
  edt2.Enabled:= True;
+end;
+
+procedure TKelas.btn6Click(Sender: TObject);
+begin
+ frxRkelas.ShowReport();
 end;
 
 end.

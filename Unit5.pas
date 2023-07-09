@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, StdCtrls, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset;
+  ZAbstractDataset, ZDataset, frxClass, frxDBSet;
 
 type
   TSemester = class(TForm)
@@ -36,6 +36,9 @@ type
     dssemster: TDataSource;
     ZQuery1: TZQuery;
     cbb1: TComboBox;
+    frxDBSemester: TfrxDBDataset;
+    frxRsemster: TfrxReport;
+    btn6: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -47,6 +50,7 @@ type
     procedure editenabled;
     procedure FormCreate(Sender: TObject);
     procedure dbgrdkelasCellClick(Column: TColumn);
+    procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -219,6 +223,11 @@ begin
   btn3.Enabled:= True;
   btn4.Enabled:= True;
   btn5.Enabled:= True;
+end;
+
+procedure TSemester.btn6Click(Sender: TObject);
+begin
+ frxRsemster.ShowReport();
 end;
 
 end.

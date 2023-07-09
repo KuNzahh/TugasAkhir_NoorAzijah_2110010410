@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Grids, DBGrids, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset;
+  ZAbstractDataset, ZDataset, frxClass, frxDBSet;
 
 type
   TOrtu = class(TForm)
@@ -36,6 +36,9 @@ type
     ZQuery1: TZQuery;
     cbb1: TComboBox;
     dbgrd1: TDBGrid;
+    frxDBortu: TfrxDBDataset;
+    frxRortu: TfrxReport;
+    btn6: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -48,6 +51,7 @@ type
     procedure dbgrdortuCellClick(Column: TColumn);
     procedure FormCreate(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
+    procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -261,6 +265,11 @@ begin
   btn3.Enabled:= True;
   btn4.Enabled:= True;
   btn5.Enabled:= True;
+end;
+
+procedure TOrtu.btn6Click(Sender: TObject);
+begin
+ frxRortu.ShowReport();
 end;
 
 end.

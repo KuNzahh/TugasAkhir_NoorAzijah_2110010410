@@ -1,6 +1,6 @@
 object MenuAwal: TMenuAwal
-  Left = 333
-  Top = 140
+  Left = 381
+  Top = 123
   Width = 928
   Height = 480
   Caption = 'Menu'

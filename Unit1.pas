@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Grids, DBGrids, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset;
+  ZAbstractDataset, ZDataset, frxClass, frxDBSet;
 
 type
   TWaliKelas = class(TForm)
@@ -34,6 +34,9 @@ type
     dsWaliKelas: TDataSource;
     cbb1: TComboBox;
     cbb2: TComboBox;
+    frxDBwalikelas: TfrxDBDataset;
+    frxRwali: TfrxReport;
+    btn6: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -45,6 +48,7 @@ type
     procedure editclear;
     procedure dbgrdWaliKelasCellClick(Column: TColumn);
     procedure FormCreate(Sender: TObject);
+    procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -220,6 +224,11 @@ begin
  btn3.Enabled:=False;
  btn4.Enabled:=False;
  btn5.Enabled:=False;
+end;
+
+procedure TWaliKelas.btn6Click(Sender: TObject);
+begin
+ frxRwali.ShowReport();
 end;
 
 end.

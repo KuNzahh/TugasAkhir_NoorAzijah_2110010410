@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset, Grids,
-  DBGrids, StdCtrls;
+  DBGrids, StdCtrls, ComCtrls, frxClass, frxDBSet;
 
 type
   TSiswa = class(TForm)
@@ -31,7 +31,6 @@ type
     lbl11: TLabel;
     edt4: TEdit;
     edt5: TEdit;
-    edt6: TEdit;
     edt9: TEdit;
     edt10: TEdit;
     dbgrdsiswa: TDBGrid;
@@ -40,6 +39,10 @@ type
     edt8: TEdit;
     cbb1: TComboBox;
     cbb2: TComboBox;
+    edt6: TEdit;
+    frxDBsiswa: TfrxDBDataset;
+    frxRsiswa: TfrxReport;
+    btn6: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -51,6 +54,7 @@ type
     procedure editenabled;
     procedure FormCreate(Sender: TObject);
     procedure dbgrdsiswaCellClick(Column: TColumn);
+    procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -249,6 +253,11 @@ begin
    edt9.Enabled:=True;
    edt10.Enabled:=True;
    cbb2.Enabled:=True;
+end;
+
+procedure TSiswa.btn6Click(Sender: TObject);
+begin
+ frxRsiswa.ShowReport();
 end;
 
 end.
