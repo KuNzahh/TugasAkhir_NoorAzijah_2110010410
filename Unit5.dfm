@@ -1,10 +1,10 @@
 object Semester: TSemester
-  Left = 268
-  Top = 108
+  Left = 437
+  Top = 105
   Width = 635
   Height = 577
   Caption = 'Data Semester'
-  Color = clBtnFace
+  Color = clActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

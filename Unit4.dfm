@@ -4,7 +4,7 @@ object Siswa: TSiswa
   Width = 675
   Height = 607
   Caption = 'Data Siswa'
-  Color = clBtnFace
+  Color = clActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

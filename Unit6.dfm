@@ -1,10 +1,10 @@
 object poin: Tpoin
-  Left = 345
-  Top = 147
+  Left = 522
+  Top = 140
   Width = 645
   Height = 478
   Caption = 'Data Point'
-  Color = clBtnFace
+  Color = clActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -30,9 +30,9 @@ object poin: Tpoin
   object lbl3: TLabel
     Left = 56
     Top = 40
-    Width = 65
+    Width = 57
     Height = 14
-    Caption = 'Nama_Point'
+    Caption = 'Nama Poin'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12

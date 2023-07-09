@@ -4,7 +4,7 @@ object Kelas: TKelas
   Width = 604
   Height = 480
   Caption = 'Data Kelas'
-  Color = clBtnFace
+  Color = clActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

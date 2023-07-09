@@ -4,7 +4,7 @@ object WaliKelas: TWaliKelas
   Width = 662
   Height = 536
   Caption = 'Data Wali Kelas'
-  Color = clBtnFace
+  Color = clActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

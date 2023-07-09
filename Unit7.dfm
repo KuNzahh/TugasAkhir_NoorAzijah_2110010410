@@ -4,7 +4,7 @@ object Hubungan: THubungan
   Width = 699
   Height = 480
   Caption = 'Data Hubungan'
-  Color = clBtnFace
+  Color = clActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

@@ -1,10 +1,10 @@
 object Login: TLogin
-  Left = 323
-  Top = 172
+  Left = 566
+  Top = 171
   Width = 672
   Height = 397
   Caption = 'Login'
-  Color = clBtnFace
+  Color = clActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -56,32 +56,24 @@ object Login: TLogin
     Left = 224
     Top = 88
     Width = 329
-    Height = 49
+    Height = 21
     TabOrder = 0
   end
   object edt2: TEdit
     Left = 224
     Top = 152
     Width = 329
-    Height = 49
+    Height = 21
     TabOrder = 1
   end
   object btn1: TButton
-    Left = 144
-    Top = 232
+    Left = 280
+    Top = 224
     Width = 121
     Height = 57
-    Caption = 'Masuk'
+    Caption = 'LOGIN'
     TabOrder = 2
     OnClick = btn1Click
-  end
-  object btn2: TButton
-    Left = 336
-    Top = 232
-    Width = 137
-    Height = 57
-    Caption = 'Daftar'
-    TabOrder = 3
   end
   object ZQuery1: TZQuery
     Connection = MenuAwal.ZConnection1

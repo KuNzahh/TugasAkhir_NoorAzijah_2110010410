@@ -4,7 +4,7 @@ object MenuAwal: TMenuAwal
   Width = 928
   Height = 480
   Caption = 'Menu'
-  Color = clBtnFace
+  Color = clActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

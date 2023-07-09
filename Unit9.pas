@@ -14,7 +14,6 @@ type
     edt1: TEdit;
     edt2: TEdit;
     btn1: TButton;
-    btn2: TButton;
     ZQuery1: TZQuery;
     dsuser: TDataSource;
     procedure btn1Click(Sender: TObject);

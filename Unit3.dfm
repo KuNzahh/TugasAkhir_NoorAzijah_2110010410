@@ -4,7 +4,7 @@ object Ortu: TOrtu
   Width = 643
   Height = 590
   Caption = 'Data Orang Tua'
-  Color = clBtnFace
+  Color = clActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

@@ -1,10 +1,10 @@
 object User: TUser
-  Left = 255
-  Top = 144
+  Left = 294
+  Top = 151
   Width = 668
   Height = 480
   Caption = 'Data User'
-  Color = clBtnFace
+  Color = clActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
