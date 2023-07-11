@@ -1,6 +1,6 @@
 object MenuAwal: TMenuAwal
-  Left = 381
-  Top = 123
+  Left = 322
+  Top = 149
   Width = 928
   Height = 480
   Caption = 'Menu'
@@ -77,6 +77,10 @@ object MenuAwal: TMenuAwal
         Caption = 'Data User'
         OnClick = DataUser1Click
       end
+    end
+    object Logout1: TMenuItem
+      Caption = 'Logout'
+      OnClick = Logout1Click
     end
   end
   object ZConnection1: TZConnection

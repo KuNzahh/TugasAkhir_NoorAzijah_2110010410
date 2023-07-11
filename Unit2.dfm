@@ -1,6 +1,6 @@
 object Kelas: TKelas
-  Left = 197
-  Top = 146
+  Left = 445
+  Top = 177
   Width = 604
   Height = 480
   Caption = 'Data Kelas'
@@ -135,6 +135,15 @@ object Kelas: TKelas
     TabOrder = 8
     OnClick = btn6Click
   end
+  object btn7: TButton
+    Left = 8
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = '<<<'
+    TabOrder = 9
+    OnClick = btn7Click
+  end
   object ZQuery1: TZQuery
     Connection = MenuAwal.ZConnection1
     Active = True
@@ -189,13 +198,13 @@ object Kelas: TKelas
       PaperHeight = 297.000000000000000000
       PaperSize = 9
       object ReportTitle1: TfrxReportTitle
-        Height = 22.677180000000000000
+        Height = 30.236240000000000000
         Top = 18.897650000000000000
         Width = 793.701300000000000000
       end
       object PageHeader1: TfrxPageHeader
         Height = 37.795300000000000000
-        Top = 64.252010000000000000
+        Top = 71.811070000000000000
         Width = 793.701300000000000000
         object Memo3: TfrxMemoView
           Left = 105.826840000000000000
@@ -236,7 +245,7 @@ object Kelas: TKelas
       end
       object MasterData1: TfrxMasterData
         Height = 34.015770000000000000
-        Top = 162.519790000000000000
+        Top = 170.078850000000000000
         Width = 793.701300000000000000
         DataSet = frxDBKelas
         DataSetName = 'frxDBKelas'

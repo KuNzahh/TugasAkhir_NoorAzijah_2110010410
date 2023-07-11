@@ -29,6 +29,7 @@ type
     frxDBuser: TfrxDBDataset;
     frxRuser: TfrxReport;
     btn6: TButton;
+    btn7: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -41,6 +42,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure dbgrduserCellClick(Column: TColumn);
     procedure btn6Click(Sender: TObject);
+    procedure btn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -217,6 +219,11 @@ end;
 procedure TUser.btn6Click(Sender: TObject);
 begin
  frxRuser.ShowReport();
+end;
+
+procedure TUser.btn7Click(Sender: TObject);
+begin
+ user.Close;
 end;
 
 end.

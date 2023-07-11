@@ -37,6 +37,7 @@ type
     frxDBwalikelas: TfrxDBDataset;
     frxRwali: TfrxReport;
     btn6: TButton;
+    btn7: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -49,6 +50,7 @@ type
     procedure dbgrdWaliKelasCellClick(Column: TColumn);
     procedure FormCreate(Sender: TObject);
     procedure btn6Click(Sender: TObject);
+    procedure btn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -258,6 +260,11 @@ end;
 procedure TWaliKelas.btn6Click(Sender: TObject);
 begin
  frxRwali.ShowReport();
+end;
+
+procedure TWaliKelas.btn7Click(Sender: TObject);
+begin
+ walikelas.Close;
 end;
 
 end.

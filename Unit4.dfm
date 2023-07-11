@@ -1,6 +1,6 @@
 object Siswa: TSiswa
-  Left = 494
-  Top = 57
+  Left = 639
+  Top = 89
   Width = 675
   Height = 607
   Caption = 'Data Siswa'
@@ -389,6 +389,15 @@ object Siswa: TSiswa
     Caption = 'Laporan'
     TabOrder = 17
     OnClick = btn6Click
+  end
+  object btn7: TButton
+    Left = 8
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = '<<<'
+    TabOrder = 18
+    OnClick = btn7Click
   end
   object ZQuery1: TZQuery
     Connection = MenuAwal.ZConnection1

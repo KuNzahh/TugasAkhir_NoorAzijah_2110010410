@@ -257,9 +257,9 @@ object Ortu: TOrtu
       'Perempuan')
   end
   object dbgrd1: TDBGrid
-    Left = 40
+    Left = 8
     Top = 304
-    Width = 561
+    Width = 609
     Height = 209
     DataSource = dsOrtu
     TabOrder = 14
@@ -309,7 +309,7 @@ object Ortu: TOrtu
       item
         Expanded = False
         FieldName = 'alamat'
-        Width = 80
+        Width = 70
         Visible = True
       end
       item
@@ -320,6 +320,7 @@ object Ortu: TOrtu
       item
         Expanded = False
         FieldName = 'agama'
+        Width = 30
         Visible = True
       end
       item
@@ -337,6 +338,15 @@ object Ortu: TOrtu
     TabOrder = 15
     OnClick = btn6Click
   end
+  object btn7: TButton
+    Left = 8
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = '<<<'
+    TabOrder = 16
+    OnClick = btn7Click
+  end
   object dsOrtu: TDataSource
     DataSet = ZQuery1
     Left = 576
@@ -348,14 +358,14 @@ object Ortu: TOrtu
     SQL.Strings = (
       'select * from ortu')
     Params = <>
-    Left = 568
+    Left = 576
     Top = 16
   end
   object frxDBortu: TfrxDBDataset
     UserName = 'frxDBortu'
     CloseDataSource = False
     DataSet = ZQuery1
-    Left = 584
+    Left = 576
     Top = 136
   end
   object frxRortu: TfrxReport

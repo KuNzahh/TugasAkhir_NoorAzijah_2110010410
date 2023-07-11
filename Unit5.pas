@@ -39,6 +39,7 @@ type
     frxDBSemester: TfrxDBDataset;
     frxRsemster: TfrxReport;
     btn6: TButton;
+    btn7: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -51,6 +52,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure dbgrdkelasCellClick(Column: TColumn);
     procedure btn6Click(Sender: TObject);
+    procedure btn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -257,6 +259,11 @@ end;
 procedure TSemester.btn6Click(Sender: TObject);
 begin
  frxRsemster.ShowReport();
+end;
+
+procedure TSemester.btn7Click(Sender: TObject);
+begin
+ semester.Close;
 end;
 
 end.

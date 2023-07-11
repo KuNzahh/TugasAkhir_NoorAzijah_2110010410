@@ -258,6 +258,67 @@ object Semester: TSemester
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     OnCellClick = dbgrdkelasCellClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Width = 20
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'siswa_id'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'point_id'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'wali_id'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ortu_id'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kelas_id'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'tanggal'
+        Width = 60
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'semester'
+        Width = 60
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'status'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'tingkat_kelas'
+        Width = 100
+        Visible = True
+      end>
   end
   object cbb1: TComboBox
     Left = 136
@@ -278,6 +339,15 @@ object Semester: TSemester
     Caption = 'Laporan'
     TabOrder = 15
     OnClick = btn6Click
+  end
+  object btn7: TButton
+    Left = 8
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = '<<<'
+    TabOrder = 16
+    OnClick = btn7Click
   end
   object dssemster: TDataSource
     DataSet = ZQuery1

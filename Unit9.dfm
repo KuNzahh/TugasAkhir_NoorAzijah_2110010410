@@ -1,6 +1,6 @@
 object Login: TLogin
-  Left = 566
-  Top = 171
+  Left = 282
+  Top = 172
   Width = 672
   Height = 397
   Caption = 'Login'
@@ -67,13 +67,22 @@ object Login: TLogin
     TabOrder = 1
   end
   object btn1: TButton
-    Left = 280
-    Top = 224
+    Left = 160
+    Top = 216
     Width = 121
     Height = 57
     Caption = 'LOGIN'
     TabOrder = 2
     OnClick = btn1Click
+  end
+  object btn2: TButton
+    Left = 368
+    Top = 216
+    Width = 121
+    Height = 57
+    Caption = 'Daftar User'
+    TabOrder = 3
+    OnClick = btn2Click
   end
   object ZQuery1: TZQuery
     Connection = MenuAwal.ZConnection1

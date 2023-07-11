@@ -1,6 +1,6 @@
 object WaliKelas: TWaliKelas
-  Left = 209
-  Top = 149
+  Left = 293
+  Top = 142
   Width = 662
   Height = 536
   Caption = 'Data Wali Kelas'
@@ -219,10 +219,10 @@ object WaliKelas: TWaliKelas
     TabOrder = 10
   end
   object dbgrdWaliKelas: TDBGrid
-    Left = 56
-    Top = 280
+    Left = 48
+    Top = 272
     Width = 513
-    Height = 169
+    Height = 217
     DataSource = dsWaliKelas
     TabOrder = 11
     TitleFont.Charset = DEFAULT_CHARSET
@@ -231,6 +231,60 @@ object WaliKelas: TWaliKelas
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     OnCellClick = dbgrdWaliKelasCellClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Width = 20
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nik'
+        Width = 25
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nama'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'jenis_kelamin'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pendidikan'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'telp'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'matpel'
+        Width = 60
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'alamat'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'status'
+        Visible = True
+      end>
   end
   object cbb1: TComboBox
     Left = 152
@@ -239,6 +293,9 @@ object WaliKelas: TWaliKelas
     Height = 21
     ItemHeight = 13
     TabOrder = 12
+    Items.Strings = (
+      'Perempuan'
+      'Laki-laki')
   end
   object cbb2: TComboBox
     Left = 152
@@ -247,6 +304,9 @@ object WaliKelas: TWaliKelas
     Height = 21
     ItemHeight = 13
     TabOrder = 13
+    Items.Strings = (
+      'Aktif'
+      'Tidak Aktif')
   end
   object btn6: TButton
     Left = 496
@@ -256,6 +316,15 @@ object WaliKelas: TWaliKelas
     Caption = 'Laporan'
     TabOrder = 14
     OnClick = btn6Click
+  end
+  object btn7: TButton
+    Left = 8
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = '<<<'
+    TabOrder = 15
+    OnClick = btn7Click
   end
   object ZQuery1: TZQuery
     Connection = MenuAwal.ZConnection1

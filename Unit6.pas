@@ -29,6 +29,7 @@ type
     frxDBpoin: TfrxDBDataset;
     frxRpoin: TfrxReport;
     btn6: TButton;
+    btn7: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -41,6 +42,7 @@ type
     procedure dbgrduserCellClick(Column: TColumn);
     procedure FormCreate(Sender: TObject);
     procedure btn6Click(Sender: TObject);
+    procedure btn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -218,6 +220,11 @@ end;
 procedure Tpoin.btn6Click(Sender: TObject);
 begin
  frxRpoin.ShowReport();
+end;
+
+procedure Tpoin.btn7Click(Sender: TObject);
+begin
+ poin.close;
 end;
 
 end.

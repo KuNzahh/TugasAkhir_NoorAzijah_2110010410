@@ -39,6 +39,7 @@ type
     frxDBortu: TfrxDBDataset;
     frxRortu: TfrxReport;
     btn6: TButton;
+    btn7: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -52,6 +53,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure dbgrd1CellClick(Column: TColumn);
     procedure btn6Click(Sender: TObject);
+    procedure btn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -300,6 +302,11 @@ end;
 procedure TOrtu.btn6Click(Sender: TObject);
 begin
  frxRortu.ShowReport();
+end;
+
+procedure TOrtu.btn7Click(Sender: TObject);
+begin
+ ortu.Close;
 end;
 
 end.

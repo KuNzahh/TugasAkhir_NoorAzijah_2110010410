@@ -25,6 +25,7 @@ type
     frxDBKelas: TfrxDBDataset;
     frxRkelas: TfrxReport;
     btn6: TButton;
+    btn7: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure dbgrdkelasCellClick(Column: TColumn);
@@ -37,6 +38,7 @@ type
     procedure editenabled;
     procedure FormCreate(Sender: TObject);
     procedure btn6Click(Sender: TObject);
+    procedure btn7Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -208,6 +210,11 @@ end;
 procedure TKelas.btn6Click(Sender: TObject);
 begin
  frxRkelas.ShowReport();
+end;
+
+procedure TKelas.btn7Click(Sender: TObject);
+begin
+ kelas.Close;
 end;
 
 end.

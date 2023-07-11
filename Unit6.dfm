@@ -179,6 +179,15 @@ object poin: Tpoin
     TabOrder = 10
     OnClick = btn6Click
   end
+  object btn7: TButton
+    Left = 16
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = '<<<'
+    TabOrder = 11
+    OnClick = btn7Click
+  end
   object dspoin: TDataSource
     DataSet = ZQuery1
     Left = 568

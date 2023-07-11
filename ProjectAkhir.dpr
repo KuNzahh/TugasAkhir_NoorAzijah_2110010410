@@ -11,7 +11,8 @@ uses
   Unit6 in 'Unit6.pas' {poin},
   Unit7 in 'Unit7.pas' {Hubungan},
   Unit8 in 'Unit8.pas' {User},
-  Unit9 in 'Unit9.pas' {Login};
+  Unit9 in 'Unit9.pas' {Login},
+  Unit10 in 'Unit10.pas' {Daftar};
 
 {$R *.res}
 
@@ -27,5 +28,6 @@ begin
   Application.CreateForm(Tpoin, poin);
   Application.CreateForm(THubungan, Hubungan);
   Application.CreateForm(TUser, User);
+  Application.CreateForm(TDaftar, Daftar);
   Application.Run;
 end.

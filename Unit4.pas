@@ -43,6 +43,7 @@ type
     frxDBsiswa: TfrxDBDataset;
     frxRsiswa: TfrxReport;
     btn6: TButton;
+    btn7: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -55,6 +56,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure dbgrdsiswaCellClick(Column: TColumn);
     procedure btn6Click(Sender: TObject);
+    procedure btn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -282,6 +284,11 @@ end;
 procedure TSiswa.btn6Click(Sender: TObject);
 begin
  frxRsiswa.ShowReport();
+end;
+
+procedure TSiswa.btn7Click(Sender: TObject);
+begin
+ siswa.close;
 end;
 
 end.

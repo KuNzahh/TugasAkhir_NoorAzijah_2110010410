@@ -31,6 +31,7 @@ type
     frxDBhubungan: TfrxDBDataset;
     frxRhubungan: TfrxReport;
     btn6: TButton;
+    btn7: TButton;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn3Click(Sender: TObject);
@@ -43,6 +44,7 @@ type
     procedure dbgrduserCellClick(Column: TColumn);
     procedure FormCreate(Sender: TObject);
     procedure btn6Click(Sender: TObject);
+    procedure btn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -230,6 +232,11 @@ end;
 procedure THubungan.btn6Click(Sender: TObject);
 begin
  frxRhubungan.ShowReport();
+end;
+
+procedure THubungan.btn7Click(Sender: TObject);
+begin
+ hubungan.Close;
 end;
 
 end.

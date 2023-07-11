@@ -166,6 +166,9 @@ object User: TUser
     Height = 21
     ItemHeight = 13
     TabOrder = 9
+    Items.Strings = (
+      'Aktif'
+      'Tidak Aktif')
   end
   object btn6: TButton
     Left = 464
@@ -175,6 +178,15 @@ object User: TUser
     Caption = 'Laporan'
     TabOrder = 10
     OnClick = btn6Click
+  end
+  object btn7: TButton
+    Left = 8
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = '<<<'
+    TabOrder = 11
+    OnClick = btn7Click
   end
   object dsuser: TDataSource
     DataSet = ZQuery1
@@ -357,7 +369,7 @@ object User: TUser
           Left = 491.338900000000000000
           Width = 204.094620000000000000
           Height = 34.015770000000000000
-          DataField = 'level'
+          DataField = 'status'
           DataSet = frxDBuser
           DataSetName = 'frxDBuser'
           DisplayFormat.DecimalSeparator = ','
@@ -369,7 +381,7 @@ object User: TUser
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBuser."level"]')
+            '[frxDBuser."status"]')
           ParentFont = False
           VAlign = vaCenter
         end

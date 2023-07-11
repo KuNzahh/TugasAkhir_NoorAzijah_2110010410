@@ -16,7 +16,10 @@ type
     btn1: TButton;
     ZQuery1: TZQuery;
     dsuser: TDataSource;
+    btn2: TButton;
     procedure btn1Click(Sender: TObject);
+    procedure bersih;
+    procedure btn2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,9 +32,11 @@ var
 implementation
 
 uses
-  Menu;
+  Menu, Unit10;
 
 {$R *.dfm}
+
+
 
 procedure TLogin.btn1Click(Sender: TObject);
 begin
@@ -57,5 +62,20 @@ end;
 
 end;
 
+bersih;
+
 end;
+
+
+procedure TLogin.bersih;
+begin
+  edt1.Clear;
+  edt2.Clear;
+end;
+
+procedure TLogin.btn2Click(Sender: TObject);
+begin
+ daftar.show;
+end;
+
 end.

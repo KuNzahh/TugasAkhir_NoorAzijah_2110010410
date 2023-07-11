@@ -21,6 +21,7 @@ type
     ZConnection1: TZConnection;
     DataPoint1: TMenuItem;
     DataUser1: TMenuItem;
+    Logout1: TMenuItem;
     procedure DataKelas1Click(Sender: TObject);
     procedure DataSiswa1Click(Sender: TObject);
     procedure DataWaliKelas1Click(Sender: TObject);
@@ -29,6 +30,8 @@ type
     procedure DataHubungan1Click(Sender: TObject);
     procedure DataSemester1Click(Sender: TObject);
     procedure DataPoint1Click(Sender: TObject);
+    procedure Logout1Click(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -40,7 +43,7 @@ var
 
 implementation
 
-uses Unit2, Unit4, Unit1, Unit3, Unit8, Unit7, Unit5, Unit6;
+uses Unit2, Unit4, Unit1, Unit3, Unit8, Unit7, Unit5, Unit6, Unit9;
 
 {$R *.dfm}
 
@@ -83,5 +86,13 @@ procedure TMenuAwal.DataPoint1Click(Sender: TObject);
 begin
  poin.show
 end;
+
+procedure TMenuAwal.Logout1Click(Sender: TObject);
+begin
+ hide;
+ login.show;
+end;
+
+
 
 end.

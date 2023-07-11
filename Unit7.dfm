@@ -236,6 +236,15 @@ object Hubungan: THubungan
     TabOrder = 11
     OnClick = btn6Click
   end
+  object btn7: TButton
+    Left = 8
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = '<<<'
+    TabOrder = 12
+    OnClick = btn7Click
+  end
   object dshubungan: TDataSource
     DataSet = ZQuery1
     Left = 624

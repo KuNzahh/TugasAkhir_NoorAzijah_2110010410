@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Jul 2023 pada 17.01
+-- Waktu pembuatan: 11 Jul 2023 pada 17.53
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.1.2
 
@@ -41,8 +41,10 @@ CREATE TABLE `hubungan` (
 --
 
 INSERT INTO `hubungan` (`id`, `siswa_id`, `ortu_id`, `status_hub_anak`, `keterangan`, `status_ortu`) VALUES
-(2, 2, 2, 'Kandung', 'jahit', 'Hidup'),
-(3, 3, 3, 'kandung', 'hidup', 'meninggal');
+(2, 2, 2, 'Ayah', 'Kandung', 'Hidup'),
+(3, 3, 3, 'Ibu', 'Kandung', 'Meninggal'),
+(4, 4, 5, 'Ibu', 'Kandung', 'Aktif'),
+(5, 6, 7, 'Ayah', 'Kandung', 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -67,7 +69,7 @@ INSERT INTO `kelas` (`id`, `nama`, `jurusan`) VALUES
 (4, 'VIII', 'Vocal Group'),
 (5, 'VIII', 'Cerpen Puisi'),
 (6, 'VIII ', 'SAINS'),
-(7, '', '');
+(7, 'IX', 'Vocal Group');
 
 -- --------------------------------------------------------
 
@@ -119,9 +121,23 @@ CREATE TABLE `poin` (
 --
 
 INSERT INTO `poin` (`id`, `nama_poin`, `bobot`, `jenis`, `status`) VALUES
-(1, 'Terlambat', 20, 'pelanggaran', ''),
-(2, 'tidak rapi', 6, 'pelanggaran', ''),
-(3, 'Menikah', 100, 'Pelanggaran', '');
+(1, 'Datang terlambat', 5, 'pelanggaran', 'Aktif'),
+(2, 'Tidak rapi', 5, 'pelanggaran', 'Aktif'),
+(3, 'Menikah', 100, 'Pelanggaran', 'Aktif'),
+(4, 'Membuang sampah semb', 5, 'Pelanggaran', 'Aktif'),
+(5, 'Mencoret Tembok', 5, 'Pelanggaran', 'Aktif'),
+(6, 'Melompat Pagar', 10, 'Pelanggaran', 'Aktif'),
+(7, 'Membawa HP', 20, 'Pelanggaran', 'Aktif'),
+(8, 'Memalsu Raport', 25, 'Pelanggaran', 'Aktif'),
+(9, 'Merokok', 25, 'Pelanggaran', 'Aktif'),
+(10, 'Tauran', 75, 'Pelanggaran', 'Aktif'),
+(11, 'Berjudi', 75, 'Pelanggaran', 'Aktif'),
+(12, 'Siswa Teladan', 35, 'Prestasi', 'Aktif'),
+(13, 'Juara Kelas 1', 20, 'Prestasi', 'Aktif'),
+(14, 'Juara Kelas 2', 20, 'Prestasi', 'Aktif'),
+(15, 'Juara Kelas 3', 20, 'Prestasi', 'Aktif'),
+(16, 'Juara Provinsi', 50, 'Prestasi', 'Aktif'),
+(17, 'Juara Nasional', 75, 'Prestasi', 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -149,7 +165,8 @@ CREATE TABLE `semester` (
 INSERT INTO `semester` (`id`, `siswa_id`, `point_id`, `wali_id`, `ortu_id`, `kelas_id`, `tanggal`, `semester`, `status`, `tingkat_kelas`) VALUES
 (3, 4, 1, 2, 2, 1, '2023-07-11', '2', 'Aktif', '2'),
 (6, 2, 2, 1, 4, 2, '2023-02-01', '2', 'Aktif', '4'),
-(10, 5, 3, 3, 3, 3, '2002-10-02', '2', 'Aktif', '2');
+(10, 5, 3, 3, 3, 3, '2002-10-02', '2', 'Aktif', '2'),
+(18, 7, 12, 4, 7, 7, '2023-06-02', '6', 'Aktif', '2');
 
 -- --------------------------------------------------------
 
@@ -205,7 +222,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`, `level`, `status`) VALUES
 (2, 'Azijah', '12345678', 1, 'Aktif'),
-(3, 'Admin', 'Admin', 1, 'Aktif');
+(3, 'Admin', 'Admin', 1, 'Aktif'),
+(4, 'kunzah', '2110010410', 1, 'Aktif'),
+(5, 'Nzah', '061002', 2, 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -230,7 +249,7 @@ CREATE TABLE `wali_kelas` (
 --
 
 INSERT INTO `wali_kelas` (`id`, `nik`, `nama`, `jenis_kelamin`, `pendidikan`, `telp`, `matpel`, `alamat`, `status`) VALUES
-(1, 867, 'Neny', 'Perempuan', 'S1 ', 8766, 'ipa', 'jl gigi', ''),
+(1, 867, 'Neny', 'Perempuan', 'S1 Pendidikan', 876628374, 'BILOGI', 'Jl.Atak Ibransyah', 'tidak aktif'),
 (2, 876, 'Kenan', 'laki-laki', 'S1 Pendidikan', 823242, 'Olahraga', 'Jl Soromo', 'aktif'),
 (3, 843, 'Putri', 'Perempuan', 'S1 Pendidikan', 83424245, 'Agama', 'Jl Kenanga', 'aktif'),
 (4, 742, 'Surya', 'Laki-laki', 'S1 Pendidikan', 832442424, 'Matematika', 'Jl Kembang Goyang', 'aktif'),
@@ -303,7 +322,7 @@ ALTER TABLE `wali_kelas`
 -- AUTO_INCREMENT untuk tabel `hubungan`
 --
 ALTER TABLE `hubungan`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `kelas`
@@ -321,13 +340,13 @@ ALTER TABLE `ortu`
 -- AUTO_INCREMENT untuk tabel `poin`
 --
 ALTER TABLE `poin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `semester`
 --
 ALTER TABLE `semester`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `siswa`
@@ -339,7 +358,7 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `wali_kelas`
